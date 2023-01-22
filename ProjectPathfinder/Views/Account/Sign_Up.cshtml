@@ -1,0 +1,168 @@
+﻿@model ProjectPathfinder.ViewModels.AccountSignUp
+
+@using ProjectPathfinder.Infrastructure.Extensions
+@using ProjectPathfinder.Infrastructure.Helpers;
+
+@{
+    ViewBag.Title = "Sign Up";
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 align="center">Sign Up for Career Pathfinder</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+ @*Modal Dialog Boxes*@ 
+
+@Html.ModalDialog("t_and_c",
+                  "Terms and Conditions",
+                  File.ReadAllText(Server.MapPath(@"~/App_Data/TermsAndConditions.txt")))
+
+ @*End Modal Dialog Boxes*@ 
+
+    @*Form Section*@
+    <div class="section">
+        <div class="container">
+            <div class="panel panel-success">
+                <div class="panel-body">                    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+
+                            @using (Html.BeginForm("Sign_Up", "Account",
+                    new { ReturnUrl = ViewBag.ReturnUrl },
+                    FormMethod.Post, new { @data_toggle = "validator" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary()
+                                <h3><span class="circleLetter">1</span>Basic Information</h3><br />
+                                //Name
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(x => x.FirstName, new { @required = "true", @class = "form-control input-lg", @placeholder = "First Name(s)", @tabindex = "1" })
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(x => x.LastName, new { @required = "true", @class = "form-control input-lg", @placeholder = "Last Name", @tabindex = "2" })
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                //End Name
+                                //Dropdowns
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading text-center">Date of Birth</div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        @Html.DropDownListFor(m => m.BirthdayDay,
+                                                                              new SelectList(HtmlGenerators.SelectList(1, 31, "DD"), "Value", "Text"),
+                                                                              new { @class = "form-control", @tabindex = "3" })
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        @Html.DropDownListFor(m => m.BirthdayMonth,
+                                                                              new SelectList(HtmlGenerators.SelectList(1, 12, "MM"), "Value", "Text"),
+                                                                              new { @class = "form-control", @tabindex = "4" })
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        @Html.DropDownListFor(m => m.BirthdayYear,
+                                                                              new SelectList(HtmlGenerators.SelectList(DateTime.Now.Year - 30, DateTime.Now.Year - 15, "YYYY"), "Value", "Text"),
+                                                                              new { @class = "form-control", @tabindex = "5" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading text-center">Grade</div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    @Html.DropDownListFor(m => m.Grade,
+                                                                          new SelectList(HtmlGenerators.SelectList(8, 12, "Grade"), "Value", "Text"),
+                                                                          new {@class = "form-control", @tabindex = "6" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                //End Dropdowns
+                                //Contact Info
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(x => x.ContactNumber, new { @required = "true", @class = "form-control input-lg", @placeholder = "Contact Number", @tabindex = "7", @pattern = "^((?:\\+27|27)|0)(\\d{2})-?(\\d{3})-?(\\d{4})$" })
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(x => x.School, new { @required = "true", @class = "form-control input-lg", @placeholder = "School", @tabindex = "8" })
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                //End Contact Info
+
+                                <hr><h3><span class="circleLetter">2</span>Account Credentials</h3><br />
+
+                                //Email
+                                <div class="form-group">
+                                    @Html.EditorFor(x => x.Email, new { htmlAttributes = new { @id = "email", @required = "true", @class = "form-control input-lg", @placeholder = "Email", @tabindex = "9" } })
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="email_confirmation" class="form-control input-lg" placeholder="Confirm Email Address" tabindex="10" data-match="#email" data-match-error="Whoops, your emails do not match!" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                //End Email
+                                //Password
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <span data-toggle="tooltip" title="A minimum of 8 characters including a digit, uppercase or special character is required." data-placement="bottom">
+                                                @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @id = "password", @data_minlength = "8", @required = "true", @class = "form-control input-lg", @placeholder = "Password", @tabindex = "11" } })
+                                            </span> 
+                                            <div class="help-block with-errors"></div>                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="12" data-match="#password" data-match-error="Whoops, your passwords do not match!" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                //End Password
+
+                                @*<hr><h3><span class="circleLetter">3</span>Payment Information</h3><br />*@
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 col-md-offset-3"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="13"></div>
+                                </div>
+                                <div class="row">
+                                    <div>
+                                        <br />By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c">Terms and Conditions</a> set out by this site, including our Cookie Use.
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*End Form Section*@

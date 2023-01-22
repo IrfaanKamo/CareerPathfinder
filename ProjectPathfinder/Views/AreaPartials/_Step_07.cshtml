@@ -1,0 +1,144 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepSeven
+@using ProjectPathfinder.Test.TestObjects
+@using ProjectPathfinder.Infrastructure.Helpers;
+
+<div class="table-responsive">
+    <table style="width: 75%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="5%">No</th>
+                <th width="70%">Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td>
+                    <p><label>@Abilities.Instance.abilitiesList[0]</label></p>
+                    <p>
+                        To be skilled with your hands, apparatus, equipment, tools and machinery, to precisely
+                        perform work requiring the use of one’s hands or work with implements and be able to solve practical problems.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>
+                    <p><label>@Abilities.Instance.abilitiesList[1]</label></p>
+                    <p>
+                        To be able to work quickly and accurately with numbers, to excel in mathematics and to solve problems logically.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>
+                    <p><label>@Abilities.Instance.abilitiesList[2]</label></p>
+                    <p>
+                        To create new things with originality and to express ideas, feelings or facts.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>
+                    <p><label>@Abilities.Instance.abilitiesList[3]</label></p>
+                    <p>
+                        To possess an extensive vocabulary, to master languages easily and to handle languages well.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>
+                    <p><label>@Abilities.Instance.abilitiesList[4]</label></p>
+                    <p>
+                        To have an understanding for others. To be at ease among other people, to communicate easily and to
+                        be able to handle all kinds of situations skilfully and tactfully.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>
+                    <p><label>@Abilities.Instance.abilitiesList[5]</label></p>
+                    <p>
+                        To be neat, precise, orderly and organized.
+                    </p>
+                </td>
+            </tr>
+
+        <tbody>
+    </table>
+</div>
+
+<p><label>Now select your primary and secondary abilities/skills below:</label></p>
+
+<div class="well well-lg">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Primary Ability/Skill</label>
+            @Html.DropDownListFor(m => m.Ability_1,
+                              new SelectList(HtmlGenerators.TablesSelectList(Abilities.Instance.abilitiesList, "Abilities/Skills 1"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+        <div class="col-md-6">
+            <label>Secondary Ability/Skill</label>
+            @Html.DropDownListFor(m => m.Ability_2,
+                              new SelectList(HtmlGenerators.TablesSelectList(Abilities.Instance.abilitiesList, "Abilities/Skills 2"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+    </div>
+</div>
+
+<p><label>Fill in the table of interests below:</label></p>
+
+<div class="table-responsive">
+    <table style="width: 75%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="15%">Your two most important fields of interest</th>
+                <th width="20%">Name 2  groups of careers which suit these 2 interests</th>
+                <th width="20%">Name 2 skills/abilities that suit the 2 interests you have nominated</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>@Model.Interest_1</td>
+                <td>
+                    @Html.DropDownListFor(m => m.CareerForInterest_1,
+                                          new SelectList(HtmlGenerators.TablesSelectList(CareerGroups.Instance.careerList, "Career Group 1"), "Value", "Text"),
+                                          new { @class = "form-control test-element" })
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.AbilityForInterest_1,
+                                          new SelectList(HtmlGenerators.TablesSelectList(Abilities.Instance.abilitiesList, "Abilities/Skills 1"), "Value", "Text"),
+                                          new { @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.Interest_2</td>
+                <td>
+                    @Html.DropDownListFor(m => m.CareerForInterest_2,
+                                          new SelectList(HtmlGenerators.TablesSelectList(CareerGroups.Instance.careerList, "Career Group 2"), "Value", "Text"),
+                                          new { @class = "form-control test-element" })
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.AbilityForInterest_2,
+                                          new SelectList(HtmlGenerators.TablesSelectList(Abilities.Instance.abilitiesList, "Abilities/Skills 2"), "Value", "Text"),
+                                          new { @class = "form-control test-element" })
+                </td>
+            </tr>
+
+        <tbody>
+    </table>
+</div>

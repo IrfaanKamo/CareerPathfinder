@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Test Complete";
+}
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <p>
+                    Congratulations, you have completed the CareerPathfinder test. Your test has been saved on your profile.
+                    Once you click and submit your test, it will no longer be accesible for your reviewing and will be 
+                    submitted to an available career councellor.
+                </p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="@Url.Action("Submit_Later", "Test", new {area="member"})" class="btn btn-default">Maybe Later</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="@Url.Action("Submit_Test", "Test", new {area="member"})" class="btn btn-blue">Submit</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

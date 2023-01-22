@@ -1,0 +1,345 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepFiveContinuation
+@using ProjectPathfinder.Test.TestObjects
+
+<div class="table-responsive">
+    <table style="width: 90%;" class="table table-bordered table-striped" align="center">
+        <tbody>
+            <tr>
+                <td width="15%"><label>Confidence</label></td>
+                <td width="15%">
+                    <span>Impact</span>
+                </td>
+                <td width="60%">
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Impact_Choice, Impact.Confident, new { @class = "test-element" })Confident
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Impact_Choice, Impact.Assured, new { @class = "test-element" })Assured
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Impact_Choice, Impact.Careful, new { @class = "test-element" }) Careful
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Impact_Choice, Impact.Unsure, new { @class = "test-element" }) Unsure
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Impact_Choice, Impact.Timid, new { @class = "test-element" }) Timid
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Dominance</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Dominance_Choice, Dominance.Forceful, new { @class = "test-element" }) Forceful
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Dominance_Choice, Dominance.Demanding, new { @class = "test-element" }) Demanding
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Dominance_Choice, Dominance.Unconcerned, new { @class = "test-element" }) Unconcerned
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Dominance_Choice, Dominance.Avoiding, new { @class = "test-element" }) Avoiding
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Dominance_Choice, Dominance.Worrying, new { @class = "test-element" }) Worrying
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Leadership</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Leadership_Choice, Leadership.Leader, new { @class = "test-element" }) Leader
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Leadership_Choice, Leadership.Supporter, new { @class = "test-element" }) Supporter
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Leadership_Choice, Leadership.Dictator, new { @class = "test-element" }) Dictator
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Leadership_Choice, Leadership.Follwer, new { @class = "test-element" }) Follwer
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Leadership_Choice, Leadership.Hanger_On, new { @class = "test-element" }) Hanger-On
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+        <tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table style="width: 90%;" class="table table-bordered table-striped" align="center">
+        <tbody>
+
+            <tr>
+                <td width="15%"><label>Drive and Pace</label></td>
+                <td width="15%">
+                    <span>Drive</span>
+                </td>
+                <td width="60%">
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Drive_Choice, Drive.Energetic, new { @class = "test-element" }) Energetic
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Drive_Choice, Drive.Active, new { @class = "test-element" }) Active
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Drive_Choice, Drive.Relaxed, new { @class = "test-element" }) Relaxed
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Drive_Choice, Drive.Ineffective, new { @class = "test-element" }) Ineffective
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Drive_Choice, Drive.Lazy, new { @class = "test-element" }) Lazy
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Reliability</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Reliability_Choice, Reliability.Conscientious, new { @class = "test-element" }) Conscientious
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Reliability_Choice, Reliability.Perservering, new { @class = "test-element" }) Perservering
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Reliability_Choice, Reliability.Reliable, new { @class = "test-element" }) Reliable
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Reliability_Choice, Reliability.Easygoing, new { @class = "test-element" }) Easygoing
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Reliability_Choice, Reliability.Evading, new { @class = "test-element" }) Evading
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Courage</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Courage_Choice, Courage.Adventurous, new { @class = "test-element" }) Adventurous
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Courage_Choice, Courage.Participating, new { @class = "test-element" }) Participating
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Courage_Choice, Courage.Indecisive, new { @class = "test-element" }) Indecisive
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Courage_Choice, Courage.Hesitant, new { @class = "test-element" }) Hesitant
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Courage_Choice, Courage.Frigthened, new { @class = "test-element" }) Frigthened
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+        <tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table style="width: 90%;" class="table table-bordered table-striped" align="center">
+        <tbody>
+
+            <tr>
+                <td width="15%"><label>Personal Relationships</label></td>
+                <td width="15%">
+                    <span>Friendliness</span>
+                </td>
+                <td width="60%">
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Friendliness_Choice, Friendliness.Outgoing, new { @class = "test-element" }) Outgoing
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Friendliness_Choice, Friendliness.Friendly, new { @class = "test-element" }) Friendly
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Friendliness_Choice, Friendliness.Detatched, new { @class = "test-element" }) Detatched
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Friendliness_Choice, Friendliness.Unfriendly, new { @class = "test-element" }) Unfriendly
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Friendliness_Choice, Friendliness.Withdrawn, new { @class = "test-element" }) Withdrawn
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Sensitivity</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Sensitivity_Choice, Sensitivity.Sensitive, new { @class = "test-element" }) Sensitive
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Sensitivity_Choice, Sensitivity.Perceptive, new { @class = "test-element" }) Perceptive
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Sensitivity_Choice, Sensitivity.Tolerant, new { @class = "test-element" }) Tolerant
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Sensitivity_Choice, Sensitivity.Insensitive, new { @class = "test-element" }) Insensitive
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Sensitivity_Choice, Sensitivity.Inconsiderate, new { @class = "test-element" }) Inconsiderate
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Flexibility</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Flexibility_Choice, Flexibility.Flexible, new { @class = "test-element" }) Flexible
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Flexibility_Choice, Flexibility.Adaptable, new { @class = "test-element" }) Adaptable
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Flexibility_Choice, Flexibility.Conforming, new { @class = "test-element" }) Conforming
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Flexibility_Choice, Flexibility.Inflexible, new { @class = "test-element" }) Inflexible
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Flexibility_Choice, Flexibility.Rigid, new { @class = "test-element" }) Rigid
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+        <tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table style="width: 90%;" class="table table-bordered table-striped" align="center">
+        <tbody>
+
+            <tr>
+                <td width="15%"><label>Temperament</label></td>
+                <td width="15%">
+                    <span>Stability</span>
+                </td>
+                <td width="60%">
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Stability_Choice, Stability.Calm, new { @class = "test-element" }) Calm
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Stability_Choice, Stability.Composed, new { @class = "test-element" }) Composed
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Stability_Choice, Stability.Stable, new { @class = "test-element" }) Stable
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Stability_Choice, Stability.Excitable, new { @class = "test-element" }) Excitable
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Stability_Choice, Stability.Emotional, new { @class = "test-element" }) Emotional
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Humour</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Humour_Choice, Humour.Happy, new { @class = "test-element" }) Happy
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Humour_Choice, Humour.Lively, new { @class = "test-element" }) Lively
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Humour_Choice, Humour.Carefree, new { @class = "test-element" }) Carefree
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Humour_Choice, Humour.Serious, new { @class = "test-element" }) Serious
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Humour_Choice, Humour.Solemn, new { @class = "test-element" }) Solemn
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <span>Patience</span>
+                </td>
+                <td>
+                    <div class="btn-group radio-button" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Patience_Choice, Patience.Patient, new { @class = "test-element" }) Patient
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Patience_Choice, Patience.Untroubled, new { @class = "test-element" }) Untroubled
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Patience_Choice, Patience.Passive, new { @class = "test-element" }) Passive
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Patience_Choice, Patience.Restless, new { @class = "test-element" }) Restless
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.Patience_Choice, Patience.Impatient, new { @class = "test-element" }) Impatient
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+        <tbody>
+    </table>
+</div>

@@ -1,0 +1,160 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepEleven_2
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Questions</th>
+                <th>Yes</th>
+                <th>No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>25</td>
+                <td>You often do jobs in a hurry / in a flash</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q1, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q1, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>You generally believe that there is a logical reason for every event that takes place around you e.g. droughts, floods, storms etc.</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q2, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q2, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>You often and easily express your feelings and emotions</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q3, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q3, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>You find it difficult to speak loudly</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q4, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q4, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>You get bored if you have to read books with a lot of theory e.g. science, maths books</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q5, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q5, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>You tend to feel sorry for other people</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q6, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q6, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>You believe the death sentence should be reintroduced</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q7, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q7, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>You quickly get involved in social life at a new workplace and are not shy to make new friends</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q8, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q8, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>The more people with whom you speak, the better you feel</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q9, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q9, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>You tend to rely on your experience rather than on theory found in books</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q10, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q10, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>You like to keep a check on how things are progressing</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q11, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q11, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>You easily feel sorry for other people who are suffering e.g. the poor</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q12, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q12, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Often, you prefer to read a book rather than go to a function, soccer match, etc.</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q13, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q13, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>You enjoy being at the centre of another person’s function</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q14, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q14, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>You like to experiment with things, ideas, etc.</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q15, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q15, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>You avoid being bound by duties, rules, regulations, deadlines</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q16, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q16, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>You are strongly touched by the stories about other people’s troubles / suffering</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q17, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q17, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Deadlines are not important to you</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q18, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q18, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>You prefer to isolate yourself in a quiet room</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q19, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q19, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>You are a hands-on person</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q20, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q20, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>You think that almost everything can be analyzed or experimented with</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q21, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q21, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>You do your best to complete a task on time</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q22, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q22, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>You take pleasure in putting things in order</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q23, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q23, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>You feel at ease in a crowd</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q24, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q24, "false", new { @class = "test-element" })</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

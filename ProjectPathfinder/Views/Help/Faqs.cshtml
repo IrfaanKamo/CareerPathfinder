@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "FAQs";
+}
+
+@section AdditionalMeta
+{
+    <meta name="robots" content="NOODP">
+    <meta name="description" content="A list of Frequently Asked Questions to ease any confusions which you may have." />
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Frequently Asked Questions (FAQs)</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+
+        <div class="panel-group" id="accordion">
+
+            @* Section One *@
+
+            <div class="faqHeader">General questions</div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseGOne">Is account registration required?</a>
+                    </h4>
+                </div>
+                <div id="collapseGOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Account registration at <strong>CareerPathfinder</strong> is required in order to take part in the test.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseGTwo">Why do I need to take this test?</a>
+                    </h4>
+                </div>
+                <div id="collapseGTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        The CareerPathfinder Test is a specialised testing tool that will engage your personality, skills and abilities in
+                        order to help determine and pin point what career would be most suitable for you.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseGThree">Which grade do I need to be in to take the test?</a>
+                    </h4>
+                </div>
+                <div id="collapseGThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        It does not really matter which grade you are in, but we advise that you are at least in high school (grade 8 to 12). 
+                        This is because in high school, you are more in tune with deciding on your future. 
+                    </div>
+                </div>
+            </div>
+
+            @* Section Two *@
+
+            <div class="faqHeader">Payment</div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePOne">Is Payment required to use features on this site?</a>
+                    </h4>
+                </div>
+                <div id="collapsePOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        In order to access the complete list of resources and to unlock the complete CareePathfinder Test with results feedback, you will need to purchase the test.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePTwo">What are my payment options?</a>
+                    </h4>
+                </div>
+                <div id="collapsePTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Payment can be made via:
+                        <ul>
+                            <li>Credit/Debit/Cheque Cards</li>
+                            <li>Instant EFT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePThree">What is Instant EFT?</a>
+                    </h4>
+                </div>
+                <div id="collapsePThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        PayFast is an Instant EFT payment option available to all customers who bank with ABSA, First National Bank, Nedbank or Standard Bank.
+                        <ul>
+                            <li>Select Instant EFT as your payment option during checkout.</li>
+                            <li>You will be redirected to the PayFast payment engine where you’ll be prompted to pay the appropriate amount via EFT from your internet banking site.</li>
+                            <li>PayFast account details and a unique reference number will be provided to you by PayFast during the payment process.</li>
+                            <li>After completing your EFT payment on your internet banking site, return to the PayFast screen and click the “COMPLETE” button.</li>
+                            <li>Receipt of your payment will be verified and your order completed.</li>
+                            <li>You will be notified of successful payment and completion of your order via email.</li>
+                        </ul>
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePFour">Can I pay with cash?</a>
+                    </h4>
+                </div>
+                <div id="collapsePFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Unfortunately cash payment is not an option on this website.
+                    </div>
+                </div>
+            </div>
+
+            @* Section Three *@
+
+            <div class="faqHeader">The Test</div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTOne">How long does the test take to complete?</a>
+                    </h4>
+                </div>
+                <div id="collapseTOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        The test takes approximately 1.5 hours to complete depending on your pace. However you may complete the test over a period of time making
+                        use of the "Save and continue" later option.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTTwo">Can I save my test and continue with it at a later stage?</a>
+                    </h4>
+                </div>
+                <div id="collapseTTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Yes, the test can be saved after moving on to the next step of the test and choosing the save option. This will allow you to come back at a later
+                        stage and resume from where you left of.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

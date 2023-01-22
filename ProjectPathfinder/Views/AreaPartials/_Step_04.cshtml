@@ -1,0 +1,295 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepFour
+@using ProjectPathfinder.Test.TestObjects
+@using ProjectPathfinder.Infrastructure.Extensions
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td width="55%">
+                    <span>1. Have you already chosen a career? </span>
+                </td>
+                <td width="55%">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.ChosenCareer, "true", new { @class = "test-element" })Yes
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.ChosenCareer, "false", new { @class = "test-element" })No
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="55%">
+                    <span>2. How certain are you that you have already made the correct choice? </span>
+                </td>
+                <td width="55%">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectChoice, LikertScale.VerySure, new { @class = "test-element" })Very Sure
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectChoice, LikertScale.Sure, new { @class = "test-element" })Sure
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectChoice, LikertScale.Unsure, new { @class = "test-element" })Unsure
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectChoice, LikertScale.VeryUnsure, new { @class = "test-element" })Very Unsure
+                        </label>
+                    </div>
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+<p><label>Question 3 and 4 for Grade 9 students</label></p>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td width="55%">
+                    <span>3. Have you already chosen your subjects for Grade 10? </span>
+                </td>
+                <td width="55%">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.ChosenGrade10Sub, "true", new { @class = "test-element" })Yes
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.ChosenGrade10Sub, "false", new { @class = "test-element" })No
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td width="55%">
+                    <span>4. How sure are you that you made the correct choice?</span>
+                </td>
+                <td width="55%">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectGrade10Choice, LikertScale.VerySure, new { @class = "test-element" })Very Sure
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectGrade10Choice, LikertScale.Sure, new { @class = "test-element" })Sure
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectGrade10Choice, LikertScale.Unsure, new { @class = "test-element" })Unsure
+                        </label>
+                        <label class="btn btn-default test-element">
+                            @Html.RadioButtonFor(x => x.CorrectGrade10Choice, LikertScale.VeryUnsure, new { @class = "test-element" })Very Unsure
+                        </label>
+                    </div>
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td>
+                    <p>5. If you had to complain to your principal, what would be the ONE most important thing that you would complain about that irks you in school:</p>
+                    @Html.TextBoxFor(x => x.ProblemInSubjects, new { @maxlength = "160", @class = "form-control test-element" })
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+<p><label>SUBJECTS AND SUBJECT ACHIEVEMENTS</label></p>
+<p>Arrange all your examinations subject in the table below: [DO NOT INCLUDE LO AND ARTS & CULTURE]</p>
+<p>At least 6 Subjects are required</p>
+
+<div class="table-responsive text-center">
+    <table style="width: 40%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="5%">No</th>
+                <th width="35%">Subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>                    
+                    @Html.TextBoxFor(x => x.subject1, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject2, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject3, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject4, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject5, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject6, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject7, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject8, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>
+                    @Html.TextBoxFor(x => x.subject9, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+<p>Now rank two subjects you like the bes. Place the best-liked subject first</p>
+
+<div class="table-responsive text-center">
+    <table style="width: 60%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="5%">No</th>
+                <th width="20%">Preference</th>
+                <th width="35%">Subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Most Liked</td>
+                <td>
+                    @Html.TextBoxFor(x => x.mostLikedSubject1, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Second Most Liked</td>
+                <td>
+                    @Html.TextBoxFor(x => x.mostLikedSubject2, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+<p>Now, list two subjects which you dislike the most. Place your “nightmare” subject as number 1 on the table below:</p>
+
+<div class="table-responsive text-center">
+    <table style="width: 60%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="5%">No</th>
+                <th width="20%">Preference</th>
+                <th width="35%">Subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Most Disliked</td>
+                <td>
+                    @Html.TextBoxFor(x => x.mostDislikedSubject1, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Second Most Disliked</td>
+                <td>
+                    @Html.TextBoxFor(x => x.mostDislikedSubject2, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+<p>Now, list two subjects which you dislike the most. Place your “nightmare” subject as number 1 on the table below:</p>
+
+<div class="table-responsive text-center">
+    <table style="width: 65%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="25%">Subject</th>
+                <th width="20%">Grade @(Model.Grade - 2) (@(DateTime.Now.Year - 2))</th>
+                <th width="20%">Grade @(Model.Grade - 1) (@(DateTime.Now.Year - 1))</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Mark as % (No Symbols)</td>
+                <td>Mark as % (No Symbols)</td>
+            </tr>
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result1.SubjectName, new { @data_autofill = "#subject1", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result1.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result1.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result2.SubjectName, new { @data_autofill = "#subject2", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result2.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result2.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result3.SubjectName, new { @data_autofill = "#subject3", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result3.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result3.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result4.SubjectName, new { @data_autofill = "#subject4", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result4.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result4.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result5.SubjectName, new { @data_autofill = "#subject5", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result5.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result5.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result6.SubjectName, new { @data_autofill = "#subject6", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result6.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result6.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result7.SubjectName, new { @data_autofill = "#subject7", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result7.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result7.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result8.SubjectName, new { @data_autofill = "#subject8", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result8.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result8.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+
+            @Html.SubjectMarks(Html.TextBoxFor(x => x.result9.SubjectName, new { @data_autofill = "#subject9", @maxlength = "30", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result9.YearBeforeLastMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }),
+                               Html.TextBoxFor(x => x.result9.PreviousYearMark, new { @maxlength = "3", @onkeypress = "return isNumberKey(event)", @class = "form-control test-element" }))
+        <tbody>
+    </table>
+</div>
+
+<br />
+<br />

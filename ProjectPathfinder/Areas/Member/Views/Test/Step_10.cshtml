@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Step Ten";
+}
+
+@model ProjectPathfinder.Areas.Member.ViewModels.TestStepTen
+@using ProjectPathfinder.Infrastructure.Extensions
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <h3 class="test-step-title"><span class="circleLetter">10</span>Sentence Completion</h3>
+
+                <p class="test-step-info">Complete the following sentences as rapidly as you can. Be sure to complete every sentence.</p>
+
+                @using (Html.BeginForm())
+                {
+                    <div>@Html.ValidationSummary()</div>
+                    @Html.Partial("~/Views/AreaPartials/_Step_10.cshtml", Model)
+                    @Html.TestScreenButtons("Step_10")
+                }
+                
+            </div>
+        </div>
+    </div>
+</div>
+

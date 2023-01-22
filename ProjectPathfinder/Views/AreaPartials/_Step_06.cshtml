@@ -1,0 +1,127 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepSix
+@using ProjectPathfinder.Test.TestObjects
+@using ProjectPathfinder.Infrastructure.Helpers;
+
+<div class="table-responsive">
+    <table style="width: 75%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="5%">No</th>
+                <th width="70%">Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[0]</label></p>
+                    <p>
+                        Anything to do with building work, construction, making/processing, the preparation or repair of useful items, large or
+                        small; working skillfully with your hands, and with tools, machines or apparatus; anything to do with trades or skilled
+                        work
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[1]</label></p>
+                    <p>
+                        In this field you would like to work with plants, animals and insects that live and grow; in support of nature to further
+                        growth or repair damage; to be busy with Life Science (Biology), Ecology and Life processes.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[2]</label></p>
+                    <p>
+                        Experimenting, analyzing, discovering natural laws or underlying principles; work depending on observation;
+                        investigating, theory, logic or reasoning, and perhaps the use of special instruments in laboratories; work having a
+                        relationship to mathematics or physics.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[3]</label></p>
+                    <p>
+                        Any work that greatly stresses the correct use of the spoken word, written, or printed words and the transmission of
+                        ideas; transfer of knowledge; or the ability to speak convincingly or write attractively; on vocabulary, grammar and so
+                        forth
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[4]</label></p>
+                    <p>
+                        Anything that is concerned with the beautification or provision of pleasure through the senses e.g.eyes, ears, hands;
+                        that which makes an appeal as a result of rhythm, symmetry, shape, colour, form or sound; that which is concerned
+                        with the aesthetics of life.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[5]</label></p>
+                    <p>
+                        Work that involves meeting, mixing with or dealing people in some way; involving human relations; talking to people or
+                        planning for/with them; or working with them for their own good.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[6]</label></p>
+                    <p>
+                        Anything that is concerned with buying, selling, recording of sales and profits, salesmanship, commerce and trade.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>
+                    <p><label>@Interests.Instance.interestsList[7]</label></p>
+                    <p>
+                        Any clerical or administrative work involving being methodical; office or secretarial work
+                    </p>
+                </td>
+            </tr>
+
+        <tbody>
+    </table>
+</div>
+
+<p><label>Now select your primary and secondary interests below:</label></p>
+
+<div class="well well-lg">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Primary Interest</label>
+            @Html.DropDownListFor(m => m.Interest_1,
+                              new SelectList(HtmlGenerators.TablesSelectList(Interests.Instance.interestsList, "Interests 1"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+        <div class="col-md-6">
+            <label>Secondary Interest</label>
+            @Html.DropDownListFor(m => m.Interest_2,
+                              new SelectList(HtmlGenerators.TablesSelectList(Interests.Instance.interestsList, "Interests 2"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+    </div>
+</div>

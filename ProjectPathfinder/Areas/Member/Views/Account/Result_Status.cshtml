@@ -1,0 +1,92 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.AccountResultStatus
+
+@{
+    ViewBag.Title = "Result Status";
+    bool isTestSubmitted = Model.SubmittedTestDate != null && Model.SubmittedTestDate.Year > 2000;
+    bool isResultsSubmitted = Model.ResultsObtainedDate != null && Model.ResultsObtainedDate.Year > 2000;
+}
+
+<ol class="breadcrumb">
+    <li><a href="@Url.RouteUrl("Home")">Home</a></li>
+    <li><a href="@Url.Action("Dashboard", "Account")">My Dashboard</a></li>
+    <li class="active">Result Status</li>
+</ol>
+
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="text-center">
+            <i class="glyphicon glyphicon-list pull-left icon"></i>
+            <h2><b>Status of Results</b></h2>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 align="center">Current Status of Test Result</h3>
+                    <div style="text-align: center;">
+                        @if (isResultsSubmitted)
+                        {
+                            <h3><a href="@Url.Action("Index", "Result")" class="label label-success">Results Available</a></h3>
+                        }
+                        else if (isTestSubmitted)
+                        {
+                            <h3><span class="label label label-primary">Results Pending</span></h3>
+                        }
+                        else
+                        {
+                            <h3><span class="label label label-warning">No Submission</span></h3>
+                        }                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+                        <thead>
+                            <tr>
+                                <th style="width:10%">Date</th>
+                                <th style="width:80%">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="hidden-phone" align="center">@Model.RegisteredDate.ToShortDateString()</td>
+                                <td>
+                                    <span class="name">Registered to Career Pathfinder</span>
+                                </td>
+                            </tr>
+                            @* Check db for dates of submission and results if they exist *@
+                            @if (isTestSubmitted)
+                            {
+                                <tr>
+                                    <td class="hidden-phone" align="center">@Model.SubmittedTestDate.ToShortDateString()</td>
+                                    <td>
+                                        <span class="name">Submitted Career Pathfinder Test</span>
+                                    </td>
+                                </tr>
+                            }
+                            @if (isResultsSubmitted)
+                            {
+                                <tr>
+                                    <td class="hidden-phone" align="center">@Model.ResultsObtainedDate.ToShortDateString()</td>
+                                    <td>
+                                        <span class="name">Career Pathfinder Results Recieved</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

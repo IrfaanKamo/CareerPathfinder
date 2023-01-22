@@ -1,0 +1,64 @@
+﻿@using ProjectPathfinder.Infrastructure.Helpers
+@{ 
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Dashboard - @(CookieData.GetUserName(User.Identity.Name))</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Success message-->
+@if (TempData["DashboardMessage"] != null &&
+     (string)TempData["DashboardMessage"] != "" )
+{
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                @((string)TempData["DashboardMessage"])
+            </div>
+        </div>
+    </div>
+
+}
+<!--End Success message-->
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-heading" align="center">My Dashboard</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="row equal-height-panels">
+                        <div class="col-md-6">
+                            <div class="service-wrapper">
+                                <img src="@Url.Content("~/Assets/Images/service-icon/ruler.png")" alt="Test">
+                                    <h3>Test</h3>
+                                @Html.ActionLink("Take the Test", "Index", "Test")<br />
+                                @Html.ActionLink("Result Status","Result_Status", "Account")<br />
+                                @Html.ActionLink("View Test Results", "Index", "Result")
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-wrapper">
+                                <img src="@Url.Content("~/Assets/Images/service-icon/diamond.png")" alt="Account">
+                                <h3>Account</h3>
+                                @Html.ActionLink("Personal Details", "Personal_Details", "Account")<br />
+                                @Html.ActionLink("Payment Invoice", "Invoice", "Account", new { target = "_blank" })<br />
+                                @Html.ActionLink("Delete My Account", "Delete_Account", "Account")<br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

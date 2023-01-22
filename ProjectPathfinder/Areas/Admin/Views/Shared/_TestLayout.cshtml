@@ -1,0 +1,88 @@
+﻿@using System.Web.Optimization
+@using ProjectPathfinder.Infrastructure.Helpers
+
+@{
+    Layout = null;
+}
+
+@helper SelectedTabClass(string tabName)
+{
+    if (tabName == ViewBag.SelectedTab)
+    {
+        @: active
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title | @ViewBag.CurrentMemberName</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <meta name="robots" content="NOODP, nofollow">
+    @Styles.Render("~/bundles/styles")
+</head>
+
+<body>
+
+    @*Header Section*@
+    <div class="mainmenu-wrapper">
+        <div class="container">
+
+            <div class="menuextras">
+                <div class="extras">
+                    <ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><strong>@CookieData.GetUserName(User.Identity.Name)</strong></li>
+                            <li> | </li>
+                                <li><a href="@Url.Action("Logout", "Account", new { area = "admin"})">Logout</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <nav id="mainmenu" class="mainmenu">
+                <ul>
+                    <li class="logo-wrapper"><img src="@Url.Content("~/Assets/Images/careerpathfinder-logo.png")" alt="My Career"></li>
+                    <li class="@SelectedTabClass("adminPanel")">
+                        <a href="@Url.Action("Index", "Account", new {area="admin"})">Admin Home</a>
+                    </li>
+                    <li class="@SelectedTabClass("adminMemberTest")">
+                        <a href="@Url.Action("Index", "MemberTest", new {id = ViewBag.CurrentMemberId})">Table of Steps</a>
+                    </li>
+                    <li class="@SelectedTabClass("adminMemberResults")">
+                        <a href="@Url.Action("Feedback", "MemberResult", new {id = ViewBag.CurrentMemberId})">Add the Result</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+    @*End Header Section*@
+
+    @*Body Section*@
+    <h2>Test | Step @ViewBag.Title | @ViewBag.CurrentMemberName</h2>
+    @RenderBody()
+    @*End Body Section*@
+
+    @*Footer Section*@
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-copyright">Admin Area</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*End Footer Section*@
+
+    @Scripts.Render("~/bundles/adminTest/scripts")
+    @RenderSection("Scripts", false)
+
+</body>
+
+</html>

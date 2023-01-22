@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Payment Cancelled";
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Payment Cancelled</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="basic-login">
+
+                    <p align="center">
+                        Oh no! Looks like your payment has been cancelled. This could be due to one of the following reasons:
+                        <ul>
+                            <li>The payment was cancelled by you.</li>
+                            <li>The payment provider is currently busy.</li>
+                            <li>Our CareerPathfinder servers are experiencing some technical issues.</li>
+                        </ul>
+                        If the payment was not cancelled by you, no monies would have been deducted from your account. However,
+                        please make sure that this is indeed the case. <br /><br />
+                        
+                        If you still wish to purchase the Complete Package, please try again in a few moments. If the issue still
+                        persists, please contact support on 0722723282.                        
+                    </p><br />
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <a href="@Url.RouteUrl("Home")" class="btn pull-right">Take me Home</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <a href="@Url.Action("Dashboard", "Account")" class="btn">Take me to My Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

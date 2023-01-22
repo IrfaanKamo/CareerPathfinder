@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "1";
+}
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+                <h4>
+                    Test of @ViewBag.CurrentMemberName
+                </h4>
+                <p>
+                    Student's answers have been provided in a step by step format. Please review the answer and then head over to the results tab
+                    on the top to add in the students results. Or alternively the results can be added directly from the list of members. 
+                    <a href="@Url.Action("Index", "Member")">Go to Member List</a>
+                </p>
+
+                <p>
+                    Quick Links to Steps:
+                </p>
+                <a href="@Url.Action("Step_02", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 2</a> <br />
+                <a href="@Url.Action("Step_03", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 3</a> <br />
+                <a href="@Url.Action("Step_04", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 4</a> <br />
+                <a href="@Url.Action("Step_05_1", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 5.1</a> <br />
+                <a href="@Url.Action("Step_05_2", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 5.2</a> <br />
+                <a href="@Url.Action("Step_06", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 6</a> <br />
+                <a href="@Url.Action("Step_07", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 7</a> <br />
+                <a href="@Url.Action("Step_08", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 8</a> <br />
+                <a href="@Url.Action("Step_09", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 9</a> <br />
+                <a href="@Url.Action("Step_10", "MemberTest", new {id = ViewBag.CurrentMemberId})">Step 10</a> <br />
+
+                <br />
+
+                <p>
+                    Send the test back to the student for resubmission:
+                </p>
+                <a href="@Url.Action("Require_Resubmision", "MemberTest", new {id = ViewBag.CurrentMemberId})">I require a resubmission from this student</a>
+
+                <ul class="list-unstyled">
+                    <li class="pull-right">
+                        <a href="@Url.Action("Step_02", "MemberTest", new { id = ViewBag.CurrentMemberId })" class="btn btn-primary">
+                            Next Step <i class="glyphicon glyphicon-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

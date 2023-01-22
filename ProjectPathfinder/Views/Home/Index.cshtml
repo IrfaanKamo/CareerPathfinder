@@ -1,0 +1,224 @@
+﻿@using ProjectPathfinder.Infrastructure.Extensions
+@{
+    ViewBag.Title = "Home";
+}
+
+@section AdditionalMeta
+{
+    <meta name="robots" content="NOODP">
+    <meta name="description" content="Struggling to choose a future career? The CareerPathfinder Test helps you decide on your future career based on your skills, abilities and personality." />
+    <meta name="keywords" content="Career Test, Career Assessment, online career test, CareerPathfinder, future career">
+    <meta name="google-site-verification" content="iZV-KYcAOTOMgETKJ28jKQOB4QRU1Y_tg__pOZ4TZ7w" />
+}
+
+<!--Carousel Image-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+            <img class="first-slide" src="@Url.Content("~/Assets/Images/slider/banner2.jpg")" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 style="color: white">Find out what Your Future Career will be!</h1>
+                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("Index", "Test", new {area="member"})" role="button">Try it Today</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="second-slide" src="@Url.Content("~/Assets/Images/slider/banner1.jpg")" alt="Second slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 style="color: white">Struggling to find a future career? Let us help you!</h1>
+                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("About_Us", "Home", new {area=""})" role="button">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!-- End Carousel Image -->
+
+<!-- Call to Action Bar -->
+<div class="section section-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="calltoaction-wrapper">
+                    <h3>
+                        The <img src="@Url.Content("~/Assets/Images/careerpathfinder-logo-text.png")"> test is perfect for <strong style="color: #34ac58">high-school students</strong> deciding upon a future career.
+                        You'll get an insight to help find the right career that matches your unique assessment profile.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Call to Action Bar -->
+
+<!-- Services -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="service-wrapper">
+                    <img src="@Url.Content("~/Assets/Images/service-icon/ruler.png")" alt="Service 1">
+                    <h3>Online Evaluation</h3>
+                    <p>You will engage in a comprehensive online evaluation</p>
+                    <a href="#" class="btn" data-toggle="modal" data-target="#evaluationModal">Read more</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="service-wrapper">
+                    <img src="@Url.Content("~/Assets/Images/service-icon/diamond.png")" alt="Service 2">
+                    <h3>Analysis</h3>
+                    <p>Your evaluation will be analysed and scored by the doctor himself</p>
+                    <a href="#" class="btn" data-toggle="modal" data-target="#analysisModal">Read more</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="service-wrapper">
+                    <img src="@Url.Content("~/Assets/Images/service-icon/chat.png")" alt="Service 3">
+                    <h3>Results Feedback</h3>
+                    <p>Your results will be communicated directly to you</p>
+                    <a href="#" class="btn" data-toggle="modal" data-target="#resultsModal">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Services -->
+
+<!-- Modals -->
+
+@*@Html.ModalDialog("evaluationModal",
+                 "Online Evaluation",
+                 "<p>The online CareerPathfinder test has been developed by an expert doctor in the field. The test focuses on key factors such as personality traits and abilities to accurately predict the career that best suits you.</p><p>Know yourself better with this specialised self-discovery test which helps you understand yourself.</p>")
+
+@Html.ModalDialog("analysisModal",
+                  "Analysis",
+                  "Once the CareerPathfinder test has been successfully attempted and submitted, it will then be received by our group of highly trained professionals. These professionals will analyse the data and determine the likely careers for you.")
+
+@Html.ModalDialog("resultsModal",
+                  "Results Feedback",
+                  "The finalisation of your results will be communicated to you together with a report on your possible career options giving you the peace of mind of successfully chosing a future career that matches your personality")*@
+
+<!-- End Modals -->
+
+@* Evaluation *@
+<div id="evaluationModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" align="center">Online Evaluation</h4>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    The online CareerPathfinder test has been developed by an expert doctor in the field.
+                </p>
+                <p>
+                    The test focuses on key factors such as personality traits and abilities to accurately
+                    predict the career that best suits you. You will engage in this comprehensive test through
+                    a series of various questions that will link you to suitable careers.
+                </p>
+                <p>
+                    Understand yourself better with this specialised self-discovery test.
+                </p>
+                <div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@* Analysis *@
+<div id="analysisModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" align="center">Analysis</h4>
+            </div>
+
+            <div class="modal-body">
+                Once the CareerPathfinder test has been successfully attempted and submitted, it will then be 
+                received by the doctor himself. The doctor will then analyse the data and determine the likely 
+                careers for you.
+                <div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@* Results *@
+<div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" align="center">Results Feedback</h4>
+            </div>
+
+            <div class="modal-body">
+                The finalisation of your results will be communicated to you together with a report on your possible 
+                career options giving you the peace of mind of successfully chosing a future career that matches your 
+                unique assesment profile.
+                <div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action Bar -->
+<div class="section section-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="calltoaction-wrapper">
+                    <h3>Unlock your future. Take the test today</h3> <br>
+                    <h4>
+                        The test will take you just 90 minutes to complete, with the
+                        option to save your progress and continue later. Are you ready
+                        to unlock your future?
+                    </h4><br>
+                    <a href="@Url.Action("Index", "Test", new {area="member"})" class="btn btn-red">Yes! Let's Begin!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Call to Action Bar -->

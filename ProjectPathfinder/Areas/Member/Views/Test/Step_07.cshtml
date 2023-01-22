@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Step Seven";
+}
+
+@model ProjectPathfinder.Areas.Member.ViewModels.TestStepSeven
+@using ProjectPathfinder.Infrastructure.Extensions
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                @using (Html.BeginForm())
+                {
+                    <div>@Html.ValidationSummary()</div>
+
+                    <h3 class="test-step-title"><span class="circleLetter">7</span>Abilities and Skills</h3>
+                    <p>
+                        Your abilities and skills are those things that you are able to do and at which you excel, and may also include
+                        undiscovered and /or undeveloped abilities.
+                    </p>
+                    <p class="test-step-info">
+                        Six abilities are described below. Read the descriptions and choose the fields according to your preferences. 
+                        Below the table are two dropdown boxes, select your main ability/skill in first dropdown box and, your second 
+                        ability/skill in the second dropdown box.
+                    </p>
+                    @Html.Partial("~/Views/AreaPartials/_Step_07.cshtml", Model)
+                    @Html.TestScreenButtons("Step_07")
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

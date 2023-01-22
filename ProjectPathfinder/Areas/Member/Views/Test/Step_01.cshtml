@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Step One";
+}
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <div class="=row">
+                    @* Table of Contents *@
+                    <div class="col-md-6 test-intro">
+                        <div class="test-intro-banner">
+                            <h3>The <img src="@Url.Content("~/Assets/Images/careerpathfinder-logo.png")"> Test</h3>
+                        </div>
+                        <p>
+                            Welcome to the Career Pathfinder Test. This confidential assessment will help you discover your future career.
+                            Answer freely and honestly as this is not a test assessing right or wrong answers. Whatever you write in the
+                            assessment is strictly confidential.
+                        </p>
+                        <p>
+                            The assessment comprises of an array of questions, each of which are separated into specific sections. The 
+                            assessment takes on average 1.5 hours to complete. 
+                            Given the length of the assessment, you will be allowed to <label class="label label-default">Save</label> your 
+                            progress and continue at a later stage. Please note that you will only be able to save all successfully 
+                            completed steps. A step is consider successfully completed once all questions are answered and you have submitted 
+                            the step by clicking the 'next step' button.
+                        </p>
+                        <p>
+                            Your results will be analysed and scored by professionals. Your results will be communicated to you via your
+                            personal dashboard. Be sure to look out for the 'Results' link on your dashboard.                     
+                        </p>      
+                        <p>
+                            Hit the <label class="label label-success" >Next Step</label> button once you are ready to begin. Goodluck in 
+                            the assessment and let this be the begining of your journey to your future career.  
+                        </p>                 
+                    </div>
+
+                    @* Message *@
+                    <div class="col-md-6">
+                        <h3>Test Layout</h3>
+                        <table class="table test-intro">
+                            <tbody>
+
+                                <tr><th colspan="2">Section A  -  Background</th></tr>
+                                <tr>
+                                    <td>Step 1</td>
+                                    <td>Getting Started</td>
+                                </tr>
+                                <tr>
+                                    <td>Step 2</td>
+                                    <td>Reflecting on my Future Career</td>
+                                </tr>
+                                <tr>
+                                    <td>Step 3</td>
+                                    <td>My Career Needs and Values</td>
+                                </tr>
+
+                                <tr><th colspan="2">Section B  -  Biography</th></tr>
+                                <tr>
+                                    <td>Step 4</td>
+                                    <td>Subject Preferences and Subject Results</td>
+                                </tr>
+
+                                <tr><th colspan="2">Section C  -  Personality Aspects</th></tr>
+                                <tr>
+                                    <td>Step 5</td>
+                                    <td>Personality</td>
+                                </tr>
+                                <tr>
+                                    <td>Step 6</td>
+                                    <td>Interests</td>
+                                </tr>
+                                <tr>
+                                    <td>Step 7</td>
+                                    <td>Abilities and Skills</td>
+                                </tr>
+                                <tr>
+                                    <td>Step 8</td>
+                                    <td>Bullseye Workshop and Chosen Careers</td>
+                                </tr>
+
+                                <tr><th colspan="2">Section D  -  Self-Esteem</th></tr>
+                                <tr>
+                                    <td>Step 9</td>
+                                    <td>Self Esteem Inventory</td>
+                                </tr>
+                                <tr>
+                                    <td>Step 10</td>
+                                    <td>Sentence Completion</td>
+                                </tr>
+                            </tbody>
+                        </table>                     
+                    </div>
+
+                </div>
+
+                @* Next Button *@
+                <ul class="list-unstyled">
+                    <li class="pull-right">
+                        <a href="@Url.Action("Step_02", "Test")" class="btn btn-primary">
+                            Next Step <i class="glyphicon glyphicon-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Payment Success";
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Payment Success</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="basic-login">
+
+                    <p align="center">
+                        Awesome! Your payment has been successfully processed. All features of the CareerPathfinder Test have
+                        now been unlocked. <br />Welcome to discovering your future.
+                    </p><br />
+                    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <a href="@Url.Action("Invoice", "Account")" class="btn pull-right">View My Invoice</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <a href="@Url.Action("Dashboard", "Account")" class="btn">Take me to My Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

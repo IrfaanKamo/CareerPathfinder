@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /Errors
+Disallow: /Admin
+Disallow: /Member
+Sitemap: http://www.careerpathfinder.co.za/sitemap.xml

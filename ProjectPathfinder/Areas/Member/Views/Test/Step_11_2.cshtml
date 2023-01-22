@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Step Eleven 2";
+}
+
+@model ProjectPathfinder.Areas.Member.ViewModels.TestStepEleven_2
+@using ProjectPathfinder.Infrastructure.Extensions
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <p>Select the appropriate answer with a Yes or No</p>
+
+                @using (Html.BeginForm())
+                {
+                    <div>@Html.ValidationSummary()</div>
+                    @Html.Partial("~/Views/AreaPartials/_Step_11_2.cshtml", Model)
+                    @Html.TestScreenButtons("Step_11_2")
+                }
+                
+            </div>
+        </div>
+    </div>
+</div>
+

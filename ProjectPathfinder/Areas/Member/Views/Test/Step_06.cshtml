@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Step Six";
+}
+
+@model ProjectPathfinder.Areas.Member.ViewModels.TestStepSix
+@using ProjectPathfinder.Infrastructure.Extensions
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <h3 class="test-step-title"><span class="circleLetter">6</span>Interests</h3>
+
+                @using (Html.BeginForm())
+                {
+                    <div>@Html.ValidationSummary()</div>
+                    
+                    <p class="test-step-info">
+                        Your interests are those things you like to do. Eight fields of interest are described below. Read the descriptions and choose
+                        the fields according to your preferences. Below the table are two dropdown boxes, select your main interest in first dropdown box 
+                        and, your second interest in the second dropdown box.
+                    </p>
+                    @Html.Partial("~/Views/AreaPartials/_Step_06.cshtml", Model)
+                    @Html.TestScreenButtons("Step_06")
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

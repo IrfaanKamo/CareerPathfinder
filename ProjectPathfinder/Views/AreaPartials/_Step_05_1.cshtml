@@ -1,0 +1,695 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepFive
+
+<p><label>Personality</label></p>
+<p>Your personality makes up that set of characteristics which distinguish you from other people. Personality types indicating their main characteristics and descriptions of corresponding career groups are set out below. Select the characteristics in each section which correspond with your personality.</p>
+
+<div class="table-responsive">
+    <table style="width: 100%;" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th width="10%">Group</th>
+                <th width="60%">Characteristic</th>
+                <th width="30%">Career Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Realistic</td>
+                <td>
+                    <div class="form-group">
+                        <div class="checkbox-button">
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[0], new { @class = "test-element" }) Natural
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[1], new { @class = "test-element" }) Shy
+                            </label>
+                            <label class="btn btn-grey" data-toggle="tooltip" title= "Sincere">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[2], new { @class = "test-element" }) Candid
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[3], new { @class = "test-element" }) Perservering
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[4], new { @class = "test-element" }) Honest
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[5], new { @class = "test-element" }) Practical
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[6], new { @class = "test-element" }) Modest
+                            </label>
+                            <label class="btn btn-grey" data-toggle="tooltip" title= "Dedicated">
+                                @Html.CheckBoxFor(x => x.Personality_Realistic[7], new { @class = "test-element" }) Steadfast
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <p>Realistic career group</p>
+                    Careers where you work with your hands, tools and machinery, make or repair articles or care and nurture living things such as plants and animals
+                </td>
+            </tr>
+
+            <tr>
+                <td>Investigative</td>
+                <td>
+                    <div class="form-group">
+                        <div class="checkbox-button">
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[0], new { @class = "test-element" }) Careful
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[1], new { @class = "test-element" }) Systematic
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[2], new { @class = "test-element" }) Critical
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[3], new { @class = "test-element" }) Modest
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[4], new { @class = "test-element" }) Iquisitive
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[5], new { @class = "test-element" }) Precise
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[6], new { @class = "test-element" }) Independent
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Investigative[7], new { @class = "test-element" }) Reserved
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <p>Investigative career group</p>
+                    Careers where you prefer to work with ideas and things, discover new facts and experiment and observe with scientific equipment.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Aesthetic</td>
+                <td>
+                    <div class="form-group">
+                        <div class="checkbox-button">
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[0], new { @class = "test-element" }) Complicated
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[1], new { @class = "test-element" }) Impractical
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[2], new { @class = "test-element" }) Confused
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[3], new { @class = "test-element" }) Impulsive
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[4], new { @class = "test-element" }) Sensitive
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[5], new { @class = "test-element" }) Independent
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[6], new { @class = "test-element" }) Expressive
+                            </label>
+                            <label class="btn btn-grey" data-toggle="tooltip" title= "Instinctive/Perceptive">
+                                @Html.CheckBoxFor(x => x.Personality_Aesthetic[7], new { @class = "test-element" }) Intuitive
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <p>Aesthetic career group</p>   
+                    Careers where you undertake tasks demanding the interpretation and presentation of ideas, feelings or facts from a pure personal view. The way this is done may vary from theory.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Social</td>
+                <td>
+                    <div class="form-group">
+                        <div class="checkbox-button">
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[0], new { @class = "test-element" }) Convincing
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[1], new { @class = "test-element" }) Kind
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[2], new { @class = "test-element" }) Co-operative
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[3], new { @class = "test-element" }) Sociable
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[4], new { @class = "test-element" }) Friendly
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[5], new { @class = "test-element" }) Tactful
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[6], new { @class = "test-element" }) Helpful
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Social[7], new { @class = "test-element" }) Understanding
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <p>Social career group</p>
+                    Careers where you work with people, care for and communicate with them. It also entails careers where you solve problems which demand understanding and interpretation of human behaviour.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Enterprising</td>
+                <td>
+                    <div class="form-group">
+                        <div class="checkbox-button">
+                            <label class="btn btn-grey" data-toggle="tooltip" title= "materialistic/greedy">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[0], new { @class = "test-element" }) Acquisitive
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[1], new { @class = "test-element" }) Energetic
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[2], new { @class = "test-element" }) Playful
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[3], new { @class = "test-element" }) Adventurous
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[4], new { @class = "test-element" }) Excitement-Seeking
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[5], new { @class = "test-element" }) Optimistic
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[6], new { @class = "test-element" }) Agreeable
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[7], new { @class = "test-element" }) Exhibitionist
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[8], new { @class = "test-element" }) Self-confident
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[9], new { @class = "test-element" }) Ambitious
+                            </label>
+                            <label class="btn btn-grey" data-toggle="tooltip" title= "Talkative">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[10], new { @class = "test-element" }) Extroverted
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Enterprising[11], new { @class = "test-element" }) Sociable
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <p>Enterprising career group</p>  
+                    Careers where you have sufficient business acumen to start your own business. It details buying and selling and being an excellent marketing/salesperson. Profits matter in this career group.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Conventional</td>
+                <td>
+                    <div class="form-group">
+                        <div class="checkbox-button">
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[0], new { @class = "test-element" }) Careful
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[1], new { @class = "test-element" }) Inflexible
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[2], new { @class = "test-element" }) Persistent
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[3], new { @class = "test-element" }) Conforming
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[4], new { @class = "test-element" }) Inhibited
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[5], new { @class = "test-element" }) Practical
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[6], new { @class = "test-element" }) Conscientious
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[7], new { @class = "test-element" }) Methodical
+                            </label>
+                            <label class="btn btn-grey" data-toggle="tooltip" title= "proper/prim/formal">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[8], new { @class = "test-element" }) Prudish
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[9], new { @class = "test-element" }) Defensive
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[10], new { @class = "test-element" }) Obedient
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[11], new { @class = "test-element" }) Thrifty
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[12], new { @class = "test-element" }) Efficient
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[13], new { @class = "test-element" }) Orderly
+                            </label>
+                            <label class="btn btn-grey">
+                                @Html.CheckBoxFor(x => x.Personality_Conventional[14], new { @class = "test-element" }) Unimaginitive
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <p>Conventional career group</p>  
+                    Careers with routines, adhering strictly to rules is paramount.  This career group is all about being responsible and being accountable. 
+                    One has to work with items and figures as well as commodities. Involves being rigid and to the point.
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+@* PART TWO *@
+
+<p><label>TYPES OF PERSONALITIES AND RELATED CAREERS/CHARACTERISTICS</label></p>
+
+<p>
+    1. Realistic. (R) Likes realistic jobs such as mechanic, surveyor, farmer, electrician, wall and floor tiler, filling station
+    attendant, carpenter, spray-painter, welder, bus driver, baker, fireman, bricklayer, meter reader, plumber, miner,
+    farmer, draughtsman and tool designer.
+</p>
+<p>
+    Has mechanical abilities, but may lack social skills.  May be described as:
+</p>
+<div class="well">
+    <div class="form-group">
+        <div class="checkbox-button">
+            <label class="btn btn-grey" data-toggle="tooltip" title= "anti-social/does not conform to rules">
+                @Html.CheckBoxFor(x => x.Job_Realistic[0], new { @class = "test-element" }) Asocial
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[1], new { @class = "test-element" }) Inflexible
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[2], new { @class = "test-element" }) Practical
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[3], new { @class = "test-element" }) Conforming
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[4], new { @class = "test-element" }) Materialistic
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "shy/modest">
+                @Html.CheckBoxFor(x => x.Job_Realistic[5], new { @class = "test-element" }) Self-effacing
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[6], new { @class = "test-element" }) Frank
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[7], new { @class = "test-element" }) Natural
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[8], new { @class = "test-element" }) Thrifty
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[9], new { @class = "test-element" }) Genuine
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[10], new { @class = "test-element" }) Normal
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[11], new { @class = "test-element" }) Unsightful
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[12], new { @class = "test-element" }) Hardheaded
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[13], new { @class = "test-element" }) Persistent
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Realistic[14], new { @class = "test-element" }) Uninvolved
+            </label>
+        </div>
+    </div>
+</div>
+
+<p>
+    2. Investigative.   (I)   Likes investigative jobs such as biologist, chemist, physicist, anthropologist, medical
+    technologist, medical laboratory technician, food technologist, horticulturist, agriculturist, land surveyor,
+    optometrist, medical doctor, dentist, veterinary surgeon, engineer, airline pilot, geologist, pharmacist, computer
+    programmer and mathematician.
+</p>
+<p>
+    Has mathematic and scientific ability, but often lacks leadership ability.  May be described as:
+</p>
+<div class="well">
+    <div class="form-group">
+        <div class="checkbox-button">
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[0], new { @class = "test-element" }) Analytical
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[1], new { @class = "test-element" }) Independent
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[2], new { @class = "test-element" }) Rational
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[3], new { @class = "test-element" }) Cautious
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[4], new { @class = "test-element" }) Intellectual
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[5], new { @class = "test-element" }) Reserved
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[6], new { @class = "test-element" }) Critical
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "deep in thought/reflective/pensive">
+                @Html.CheckBoxFor(x => x.Job_Investigative[7], new { @class = "test-element" }) Introspective
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[8], new { @class = "test-element" }) Retiring
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[9], new { @class = "test-element" }) Complex
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "gloomy/negative">
+                @Html.CheckBoxFor(x => x.Job_Investigative[10], new { @class = "test-element" }) Pessimistic
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[11], new { @class = "test-element" }) Unassuming
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[12], new { @class = "test-element" }) Curious
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[13], new { @class = "test-element" }) Precise
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Investigative[14], new { @class = "test-element" }) Unpopular
+            </label>
+        </div>
+    </div>
+</div>
+
+<p>
+    3. Artistic.  (A)   Likes artistic jobs, such as composer, musician, stage director, writer, interior decorator, actor,
+    photographer, singer, fashion designer, conductor, writer, commercial artist, sculptor, poet, journalist, cartoonist,
+    editor and architect.
+<p>
+    Has writing, musical or artistic abilities but often lacks clerical skills.  May be described as:
+</p>
+<div class="well">
+    <div class="form-group">
+        <div class="checkbox-button">
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[0], new { @class = "test-element" }) Complicated
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[1], new { @class = "test-element" }) Imaginitive
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "instinctive/perceptive">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[2], new { @class = "test-element" }) Intuitive
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[3], new { @class = "test-element" }) Disorderly
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[4], new { @class = "test-element" }) Impractical
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[5], new { @class = "test-element" }) Nonconforming
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[6], new { @class = "test-element" }) Emotional
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[7], new { @class = "test-element" }) Impulsive
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[8], new { @class = "test-element" }) Open
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[9], new { @class = "test-element" }) Expressive
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[10], new { @class = "test-element" }) Independent
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[11], new { @class = "test-element" }) Original
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[12], new { @class = "test-element" }) Idealistic
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "deep in thought/reflective/pensive">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[13], new { @class = "test-element" }) Introspective
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Aesthetic[14], new { @class = "test-element" }) Sensitive
+            </label>
+        </div>
+    </div>
+</div>
+
+<p>
+    4. Social.  (S)   Likes social jobs such as teacher, religious worker, counsellor, clinical psychologist, speech
+    therapist, hairdresser, librarian, training officer, historian, occupational therapist, social worker, radio/tv
+    announcer, nurse, vocational counselor, marriage counselor, juvenile delinquency expert, diplomat, clergyman
+    and psychologist.
+<p>
+    Has social skills and talents, but often lacks mechanical and scientific ability.  May be described as:
+</p>
+<div class="well">
+    <div class="form-group">
+        <div class="checkbox-button">
+            <label class="btn btn-grey" data-toggle="tooltip" title= "growing">
+                @Html.CheckBoxFor(x => x.Job_Social[0], new { @class = "test-element" }) Ascendent
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[1], new { @class = "test-element" }) Helpful
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[2], new { @class = "test-element" }) Responsible
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[3], new { @class = "test-element" }) Cooperative
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[4], new { @class = "test-element" }) Idealistic
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[5], new { @class = "test-element" }) Sociable
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "concerned">
+                @Html.CheckBoxFor(x => x.Job_Social[6], new { @class = "test-element" }) Empathetic
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[7], new { @class = "test-element" }) Kind
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[8], new { @class = "test-element" }) Tactful
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[9], new { @class = "test-element" }) Friendly
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[10], new { @class = "test-element" }) Patient
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[11], new { @class = "test-element" }) Understanding
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[12], new { @class = "test-element" }) Generous
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[13], new { @class = "test-element" }) Persuasive
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Social[14], new { @class = "test-element" }) Warm
+            </label>
+        </div>
+    </div>
+</div>
+
+<p>
+    5. Enterprising.  (E)   Likes enterprising jobs such as salesperson, manager, business executive, television
+    producer, buyer, traffic officer, shop assistant, speculator, hotel manager, building contractor, insurance agent,
+    estate agent, sales representative, manager marketing, personnel manager, interpreter, attorney, magistrate,
+    company secretary and industrial engineer.  
+<p>
+    Has leadership and speaking abilities but often lacks scientific ability.  May be described as:
+</p>
+<div class="well">
+    <div class="form-group">
+        <div class="checkbox-button">
+            <label class="btn btn-grey" data-toggle="tooltip" title= "materialistic/greedy">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[0], new { @class = "test-element" }) Acquisitive
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[1], new { @class = "test-element" }) Energetic
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[2], new { @class = "test-element" }) Playful
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[3], new { @class = "test-element" }) Adventurous
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[4], new { @class = "test-element" }) Excitement-seeking
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "hopeful/positive">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[5], new { @class = "test-element" }) Optimistic
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[6], new { @class = "test-element" }) Agreeable
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[7], new { @class = "test-element" }) Exhibitionist
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[8], new { @class = "test-element" }) Self-confident
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[9], new { @class = "test-element" }) Ambitious
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "talkative">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[10], new { @class = "test-element" }) Extroverted
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Enterprising[11], new { @class = "test-element" }) Sociable
+            </label>
+        </div>
+    </div>
+</div>
+
+<p>
+    6. Conventional.  (C)   Likes conventional jobs such as bookkeeper, financial analyst, banker, tax expert, usher,
+    postman, waiter, telephone operator/receptionist, typist, clerk, cashier, computer operator, proofreader, library
+    assistant, stock controller, transport manager, accountant and quantity surveyor.
+<p>
+    Has clerical and arithmetic ability, but often lacks artistic abilities.  May be described as:
+</p>
+<div class="well">
+    <div class="form-group">
+        <div class="checkbox-button">
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[0], new { @class = "test-element" }) Careful
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[1], new { @class = "test-element" }) Inflexible
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[2], new { @class = "test-element" }) Persistent
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[3], new { @class = "test-element" }) Conforming
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[4], new { @class = "test-element" }) Inhibited
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[5], new { @class = "test-element" }) Practical
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[6], new { @class = "test-element" }) Conscientious
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[7], new { @class = "test-element" }) Methodical
+            </label>
+            <label class="btn btn-grey" data-toggle="tooltip" title= "proper/prim/formal">
+                @Html.CheckBoxFor(x => x.Job_Conventional[8], new { @class = "test-element" }) Prudish
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[9], new { @class = "test-element" }) Defensive
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[10], new { @class = "test-element" }) Obedient
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[11], new { @class = "test-element" }) Thrifty
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[12], new { @class = "test-element" }) Efficient
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[13], new { @class = "test-element" }) Orderly
+            </label>
+            <label class="btn btn-grey">
+                @Html.CheckBoxFor(x => x.Job_Conventional[14], new { @class = "test-element" }) Unimaginitive
+            </label>
+        </div>
+    </div>
+</div>
+
+<p><label>SUMMING UP YOUR PERSONALITY</label></p>
+<p>Now sum up your personality by looking at each type below. Next to each write down ONLY ONE word which best describes your personality:</p>
+<p>Refer to the keywords above which will assist you to accurately describe what your personality is</p>
+
+<div class="table-responsive text-center">
+    <table style="width: 45%;" class="table table-bordered table-striped table-condensed" align="center">
+        <thead>
+            <tr>
+                <th width="5%">No</th>
+                <th width="15%">Career Group</th>
+                <th width="25%">One Main Characteristic Which Best Describes Your Personality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Realistic</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Word_Realistic, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Investigative</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Word_Investigative, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Aesthetic</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Word_Aesthetic, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Social</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Word_Social, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Enterprising</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Word_Enterprising, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Conventional</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Word_Conventional, new { @maxlength = "30", @class = "form-control test-element" })
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+

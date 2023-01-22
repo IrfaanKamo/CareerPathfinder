@@ -1,0 +1,51 @@
+﻿@model ProjectPathfinder.ViewModels.AccountLogin
+@{
+    ViewBag.Title = "Delete Account";
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Delete Account</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ol class="breadcrumb">
+    <li><a href="@Url.RouteUrl("Home")">Home</a></li>
+    <li><a href="@Url.Action("Dashboard", "Account")">My Dashboard</a></li>
+    <li class="active">Delete My Account</li>
+</ol>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="basic-login">
+                        <p align="center">Are you sure you want to delete your account?<br /> This action cannot be undone.</p><br />
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn pull-right">Yes, Delete my Account!</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <a href="@Url.Action("Dashboard", "Account")" class="btn btn-blue">No, Keep me Active!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

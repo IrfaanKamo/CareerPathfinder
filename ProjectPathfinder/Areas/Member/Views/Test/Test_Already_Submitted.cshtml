@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Test Already Submitted";
+}
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <p>
+                    Your test has already been submitted for processing. To view the current status of your test please click on the link below.
+                </p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="@Url.Action("Result_Status", "Account", new {area="member"})" class="btn btn-default">My Result Status</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

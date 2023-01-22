@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Step Three";
+}
+
+@model ProjectPathfinder.Areas.Member.ViewModels.TestStepThree
+@using ProjectPathfinder.Infrastructure.Extensions
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <h3 class="test-step-title"><span class="circleLetter">3</span>My Career Needs and Values</h3>
+
+                <p class="test-step-info">Answer the questions below truthfully by selecting the “YES” or “NO” column</p>
+
+                @using (Html.BeginForm())
+                {
+                    <div>@Html.ValidationSummary()</div>
+                    @Html.Partial("~/Views/AreaPartials/_Step_03.cshtml", Model)
+                    @Html.TestScreenButtons("Step_03")
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

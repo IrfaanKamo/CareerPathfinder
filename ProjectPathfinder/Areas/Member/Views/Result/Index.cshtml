@@ -1,0 +1,279 @@
+﻿@using ProjectPathfinder.Infrastructure.Helpers
+@model ProjectPathfinder.Areas.Member.ViewModels.ResultIndex
+
+@{
+    ViewBag.Title = "Result";
+
+    int careerOnePercent = int.Parse(Model.result.resultFeedback.interestAbilitiesMatch_01);
+    int careerTwoPercent = int.Parse(Model.result.resultFeedback.interestAbilitiesMatch_02);
+
+    string percentClassOne = "p" + careerOnePercent;
+    string percentClassTwo = "p" + careerTwoPercent;
+}
+
+@helper PercentColourClass(int percent)
+{
+    if (percent >= 50)
+    {
+        @: green
+    }
+    else
+    {
+        @: orange
+    }
+}
+
+@helper CareerMessage(int percent)
+{
+if (percent >= 50)
+{
+        @: Congratulations! Our analysis shows that you are @percent % compatible with this career based on your personality traits, skills and interests.
+    }
+    else
+    {
+        @: Unfortunately our analysis shows that this career choice will not be suitable for you based on your personality traits, skills and interests.
+    }
+}
+
+<div class="section">
+    <div class="container">
+
+        <div class="section section-breadcrumbs">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h1>@(CookieData.GetUserName(User.Identity.Name)) - Results</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        @* Career Results *@
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-body">
+                        <div class="c100 @percentClassOne @PercentColourClass(careerOnePercent)">
+                            <span>@careerOnePercent%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div class="result @PercentColourClass(careerOnePercent)">
+                            <h1>@Model.result.resultFeedback.suggestedCareer_01</h1>
+                        </div>
+                        <div><p>@CareerMessage(careerOnePercent)</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-body">
+                        <div class="c100 @percentClassTwo @PercentColourClass(careerTwoPercent)">
+                            <span>@careerTwoPercent%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div class="result @PercentColourClass(careerTwoPercent)">
+                            <h1>@Model.result.resultFeedback.suggestedCareer_02</h1>
+                        </div>
+                        <div><p>@CareerMessage(careerTwoPercent)</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* End Career Results *@
+
+        @* Traits *@
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <h3 class="text-center">Traits and Attributes that Describe You</h3>
+                <hr />
+
+                <div class="panel-group" id="accordion">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Power Personalities</a>
+                            </h3>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.personality_01</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.personality_02</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.personality_03</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.personality_04</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.personality_05</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.personality_06</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Determined Interests</a>
+                            </h3>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set2">@Model.result.resultFeedback.interest_01</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set2">@Model.result.resultFeedback.interest_02</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Outstanding Skills & Abilities</a>
+                            </h3>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set3">@Model.result.resultFeedback.abilities_01</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set3">@Model.result.resultFeedback.abilities_02</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Important Career Values</a>
+                            </h3>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.careerValues_01</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set1">@Model.result.resultFeedback.careerValues_02</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Happy Subjects</a>
+                            </h3>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set2">@Model.result.resultFeedback.preferredSubject_01</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set2">@Model.result.resultFeedback.preferredSubject_02</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Worthy Career Groups</a>
+                            </h3>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="result-set3">@Model.result.resultFeedback.careerGroup_01</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="result-set3">@Model.result.resultFeedback.careerGroup_02</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @* End Traits *@
+
+        @* Comments *@
+        <section class="comment-list">
+            <article class="row">
+                <div class="col-md-2 col-sm-2 hidden-xs">
+                    <figure class="thumbnail">
+                        <img class="img-responsive" src="@Url.Content("~/Assets/Images/profile-pictures/doctor.png")"/>
+                        <figcaption class="text-center">The Doctor</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <div class="panel panel-default arrow left">
+                        <div class="panel-body">
+                            <header class="text-left">
+                                <div class="comment-user"><i class="glyphicon glyphicon-user"></i> The Doctor</div>
+                                <div class="comment-user"><i class=" glyphicon glyphicon-envelope"></i> A personal message from the doctor</div>
+                            </header>
+                            <hr />
+                            <div class="comment-post">
+                                <p>
+                                    @Model.result.resultFeedback.comments
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        @* End Comments *@
+
+        <small>
+            The above information describes your personality, skills and abilities. This information has proved vital in the analysis of your
+            future careerpath. The doctor can only advise you on the compatibility of the selected careers that you have chosen based on the
+            information supplied by you. Thus the final career choice can only be made by you. We wish you all of the best with your
+            future career. - The CareerPathfinder Team
+        </small>
+
+    </div>
+</div>

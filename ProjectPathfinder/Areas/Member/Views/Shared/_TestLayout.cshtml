@@ -1,0 +1,136 @@
+﻿@using System.Web.Optimization
+@using ProjectPathfinder.Infrastructure.Helpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+@* No Javascript Check *@
+<noscript>
+    <style>
+            html {
+                display: none;
+            }
+        </style>
+        <meta http-equiv="refresh" content="0.0;url=home">
+</noscript>
+@* End No Javascript Check *@
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title | Career Pathfinder Test</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <meta name="robots" content="NOODP, nofollow">
+    @Styles.Render("~/bundles/styles")
+</head>
+
+<body>
+
+    @*Header Section*@
+    <div class="mainmenu-wrapper">
+        <div class="container">
+
+            <div class="menuextras">
+                <div class="extras">
+                    <ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><strong>Goodluck, @CookieData.GetUserName(User.Identity.Name)</strong></li>
+                                <li> | </li>
+                                <li><a href="@Url.Action("Logout", "Account", new { area = ""})">Logout</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <nav id="mainmenu" class="mainmenu">
+                <ul>
+                    <li class="logo-wrapper"><img src="@Url.Content("~/Assets/Images/careerpathfinder-logo.png")" alt="My Career"></li>
+                    <li>
+                        <a href="@Url.Action("Dashboard", "Account", new {area="member"})">Exit without Saving</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+    @*End Header Section*@
+
+    @{ 
+        double percentage = ((ViewBag.StepNumber-1) * 100) / 10;
+        string stepPercentage = percentage.ToString("F0");
+    }
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            @{
+                string secA = "label-default";
+                string secB = "label-default";
+                string secC = "label-default";
+                string secD = "label-default";
+
+                if (ViewBag.StepNumber <= 3)
+                {
+                    secA = "label-success";
+                }
+                else if (ViewBag.StepNumber <= 4)
+                {
+                    secB = "label-success";
+                }
+                else if (ViewBag.StepNumber <= 8)
+                {
+                    secC = "label-success";
+                }
+                else if (ViewBag.StepNumber <= 10)
+                {
+                    secD = "label-success";
+                }
+            }
+
+            <label class="label @secA">Section A - Background</label>
+            <label class="label @secB">Section B - Biography</label>
+            <label class="label @secC">Section C - Personality</label>
+            <label class="label @secD">Section D - Self-Esteem</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="progress" id="progress1">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@stepPercentage" aria-valuemin="0" aria-valuemax="100" style="width: @(stepPercentage)%;">
+                </div>
+                <span class="progress-type">Step @ViewBag.StepNumber of 11</span>
+                <span class="progress-completed">@(stepPercentage)% Completed</span>
+            </div>
+        </div>
+    </div>
+
+    @*Body Section*@
+    @RenderBody()
+    @*End Body Section*@
+
+    @*Footer Section*@
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-copyright">
+                        &copy; @DateTime.Now.Year CareerPathfinder |
+                        <span class="footer-designed-by">Site designed and developed by <a href="https://www.linkedin.com/in/mohammedirfaankamroodeen/">IrFaaN_KaMo</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*End Footer Section*@
+
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("Scripts", false)
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+﻿@model ProjectPathfinder.ViewModels.AboutUs
+@{
+    ViewBag.Title = "About Us";
+}
+
+@section AdditionalMeta
+{
+    <meta name="robots" content="NOODP">
+    <meta name="description" content="Find out more about the CareerPathfinder Test" />
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>About Career Pathfinder</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Success message-->
+@if (TempData["AboutEmailMessage"] != null &&
+     (string)TempData["AboutEmailMessage"] != "")
+{
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                @((string)TempData["AboutEmailMessage"])
+            </div>
+        </div>
+    </div>
+
+}
+<!--End Success message-->
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>The Career Pathfinder Test</h3>
+                <p>
+                    Explore your skills, abilities and personality in this comprehensive test that will ultimately provide you with an 
+                    informed career choice. The test will engage you in a series of questions and information gathering over several
+                    steps. You may then choose to save your progress and continue at a later stage, and once completed, the test will
+                    be submitted to the doctor himself. The doctor will analyse your test and provide you with vital feedback and career 
+                    options to make an informed career choice.
+                </p>
+                <h3>Meet the Doctor behind the Career Pathfinder Test</h3>
+                <p>
+                    The Doctor is a qualified career counsellor. With many years in the field of education and research, he has successfully
+                    been able to tap into the mind of the student and understand their personalities, skills and abilites. These traits are
+                    then thoroughly analysed by the doctor, leading to accurate career paths for the student.
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <div class="video-wrapper">
+                    <iframe src="http://player.vimeo.com/video/222008340?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Contact Us Section-->
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Get In Touch With Us</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+
+        <!--Success message-->
+        @if (false)
+        {
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        Thank You! Your message has been sent. We will get back to you shortly.
+                    </div>
+                </div>
+            </div>
+
+        }
+        <!--End Success message-->
+
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="well well-sm">
+                    <div class="text-center header">Our Office</div>
+                    <!-- Map -->
+                    <div id="contact-us-map"></div>
+                    <!-- End Map -->
+                    <!-- Contact Info -->
+                    <p class="contact-us-details">
+                        <b>Address:</b> Durban, South Africa<br />
+                        <b>Phone:</b> 011 111 1111<br />
+                        <b>Email:</b> <a href="mailto:careerpathfindertest@gmail.com">careerpathfindertest@gmail.com</a>
+                    </p>
+                    <!-- End Contact Info -->
+                </div>
+            </div>
+
+            <div class="col-sm-5">
+                <div class="well well-sm">
+                    <!-- Contact Form -->                    
+                    @using (Html.BeginForm())
+                    {
+                        <div class="contact-form-wrapper">
+                            <fieldset>
+                                <legend class="text-center header">Contact us</legend>
+                                <div>
+                                    @Html.ValidationSummary()
+                                </div>
+                                <div class="form-group">
+                                    <label for="Name" class="col-sm-3 control-label"><b>Your name</b></label>
+                                    <div class="col-sm-9 form-group">
+                                        @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name", @placeholder = "First Name" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email" class="col-sm-3 control-label"><b>Your Email</b></label>
+                                    <div class="col-sm-9 form-group">
+                                        @Html.EditorFor(x => x.Email, new { htmlAttributes = new { @class = "form-control", @id = "contact-email", @placeholder = "Email Address" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-message" class="col-sm-3 control-label"><b>Message</b></label>
+                                    <div class="col-sm-9 form-group">
+                                        @Html.TextAreaFor(x => x.Message, 10, 37, new { @class = "form-control", @id = "contact-message", @placeholder = "Enter your message for us here. We will get back to you as soon as possible." })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12  form-group">
+                                        <button type="submit" class="btn pull-right">Send</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    }
+                </div>
+                    <!-- End Contact Info -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Contact Us Section-->
+
+<script>
+      function initMap() {
+          var uluru = { lat: -29.853394, lng: 31.026455 };
+          var map = new google.maps.Map(document.getElementById('contact-us-map'), {
+              zoom: 17,
+              center: uluru
+          });
+          //var marker = new google.maps.Marker({
+          //    position: uluru,
+          //    map: map
+          //});
+      }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRj3Yz6jUlzq8OxEuwGQHcc7mCbTAn0q8&callback=initMap"
+        async defer></script>

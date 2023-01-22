@@ -1,0 +1,99 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepEight
+@using ProjectPathfinder.Test.TestObjects
+@using ProjectPathfinder.Infrastructure.Helpers;
+@using ProjectPathfinder.Infrastructure.Utilities
+
+<p><label>1. Six career values are listed below. Select your primary and secondary career values according to your preference:</label></p>
+
+<div class="well well-lg">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Primary Career Value</label>
+            @Html.DropDownListFor(m => m.CareerValue_1,
+                              new SelectList(HtmlGenerators.TablesSelectList(CareerValues.Instance.careerList, "Career Value 1"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+        <div class="col-md-6">
+            <label>Secondary Career Value</label>
+            @Html.DropDownListFor(m => m.CareerValue_2,
+                              new SelectList(HtmlGenerators.TablesSelectList(CareerValues.Instance.careerList, "Career Value 2"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+    </div>
+</div>
+
+<p><label>2. Study the careers in <a href="@Url.Action("Appendix", "Test", new { id = "A"})" target="_blank">Appendix A</a> and <a href="@Url.Action("Appendix", "Test", new { id = "B"})" target="_blank">Appendix B</a>: CLASSIFICATION OF CAREER GROUPS AND CAREERS</label></p>
+<br />
+<p>Six career groups are listed below. Select your primary and secondary career groups according to your preference:</p>
+
+<div class="well well-lg">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Primary Career Group</label>
+            @Html.DropDownListFor(m => m.CareerGroup_1,
+                              new SelectList(HtmlGenerators.TablesSelectList(CareerGroups.Instance.careerList, "Career Group 1"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+        <div class="col-md-6">
+            <label>Secondary Career Group</label>
+            @Html.DropDownListFor(m => m.CareerGroup_2,
+                              new SelectList(HtmlGenerators.TablesSelectList(CareerGroups.Instance.careerList, "Career Group 2"), "Value", "Text"),
+                              new { @class = "form-control test-element" })
+        </div>
+    </div>
+</div>
+
+<div class="well well-lg">
+    <p>
+        Below you will find handy resources that will provide you with an array of careers.
+        The bullseye posters is an excellent mechanism to selecting a good career choice, you will be presented with
+        various career catergories each of which will have careers that fall under different levels of qualifications
+        required. The bullseye posters (which can be found in the dropdown box below) will open as a PDF in a new tab.
+        Once you have found a primary and secondary career that suits you, type it out in the section that will follow.
+    </p>
+    <p>
+        <span class="glyphicon glyphicon-info-sign"></span><a href="#" data-toggle="modal" data-target="#bullseye"> How do I use the Bullseye Posters?</a>
+    </p>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 bullseye">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                    Bullseye Posters
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu scrollable-menu">
+                    @{
+                        foreach (string poster in GeneralUtils.BullseyePosters())
+                        {
+                            <li><a href="@Url.Action("Resource_Viewer", "Account", new { fileName = "BullsEyePosters\\" + poster.Replace(" ", "_") + ".pdf", area = "member" })" target="_blank">@poster</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="well well-lg">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Primary Career Choice</label>
+            @Html.TextBoxFor(x => x.CareerChoice_1, new { @maxlength = "30", @class = "form-control test-element" })
+        </div>
+        <div class="col-md-6">
+            <label>Secondary Career Choice</label>
+            @Html.TextBoxFor(x => x.CareerChoice_2, new { @maxlength = "30", @class = "form-control test-element" })
+        </div>
+    </div>
+</div>
+
+<p>Name ONE career which you rate as being your FAVOURITE:</p>
+
+<div class="well well-lg">
+    <div class="row">
+        <div class="col-md-6">
+            <label>My First Career Choice</label>
+            @Html.TextBoxFor(x => x.CareerChoice_First, new { @maxlength = "30", @class = "form-control test-element" })
+        </div>
+    </div>
+</div>

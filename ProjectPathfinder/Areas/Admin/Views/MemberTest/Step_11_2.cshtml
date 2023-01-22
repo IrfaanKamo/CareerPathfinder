@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "11";
+}
+
+@model ProjectPathfinder.Areas.Member.ViewModels.TestStepEleven_2
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.Partial("~/Views/AreaPartials/_Step_11_2.cshtml", Model)
+
+                    <ul class="list-unstyled">
+                        <li class="pull-right">
+                            <a href="@Url.Action("Step_11_3", "MemberTest", new {id = ViewBag.CurrentMemberId })" class="btn btn-primary test-button">
+                                Next Step <i class="glyphicon glyphicon-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="pull-left">
+                            <a href="@Url.Action("Step_11_1", "MemberTest", new {id = ViewBag.CurrentMemberId })" class="btn btn-primary test-button cancel">
+                                <i class="glyphicon glyphicon-chevron-left"></i> Previous Step
+                            </a>
+                        </li>
+                    </ul>
+                }
+                
+            </div>
+        </div>
+    </div>
+</div>
+

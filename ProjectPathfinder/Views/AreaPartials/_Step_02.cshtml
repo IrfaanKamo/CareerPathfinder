@@ -1,0 +1,88 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.TestStepTwo
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Questions</th>
+                <th>Yes</th>
+                <th>No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>I know what my abilities are</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q1, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q1, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>I know what my interests are</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q2, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q2, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>I have already read up on my chosen career in books etc</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q3, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q3, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>I know what careers I can follow with my interests and abilities</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q4, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q4, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>I know what my personality is</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q5, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q5, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>I know which subjects I need for admission to further my studies at university</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q6, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q6, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>I already know what I want to do after Grade 12</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q7, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q7, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>I know how my personality will influence my chosen career</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q8, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q8, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>I know which tertiary institution to study at after Grade 12</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q9, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q9, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>I know how I will finance my studies</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q10, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q10, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>I have already made my subject choices for Grade 10</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q11, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q11, "false", new { @class = "test-element" })</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>I am confused about my future career</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q12, "true", new { @class = "test-element" })</td>
+                <td class="text-center">@Html.RadioButtonFor(x => x.q12, "false", new { @class = "test-element" })</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

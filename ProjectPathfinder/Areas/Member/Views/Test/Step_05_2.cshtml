@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Areas/Member/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Step Five Cont.";
+}
+
+@model ProjectPathfinder.Areas.Member.ViewModels.TestStepFiveContinuation
+@using ProjectPathfinder.Infrastructure.Extensions
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <h3 class="test-step-title"><span class="circleLetter">5</span>Personality</h3>
+
+                @using (Html.BeginForm())
+                {
+                    <p><label>A LOOK AT YOUR PERSONALITY</label></p>
+                    <p class="test-step-info">
+                        Check yourself on these twelve ranges of personality types (traits), Select one word per row
+                        which is most like you. Do not skip ANY row where you cannot decide. You must make a choice. It is imperative that you select the word that best
+                        describes your personality honestly.
+                    </p>
+
+                    <div>@Html.ValidationSummary()</div>
+                    @Html.Partial("~/Views/AreaPartials/_Step_05_2.cshtml", Model)
+                    @Html.TestScreenButtons("Step_05_2")
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

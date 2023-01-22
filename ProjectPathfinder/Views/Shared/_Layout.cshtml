@@ -1,0 +1,204 @@
+﻿@using System.Web.Optimization
+@using ProjectPathfinder.Infrastructure.Helpers
+
+@{
+    Layout = null;
+}
+
+@helper SelectedTabClass(string tabName)
+{
+    if (tabName == ViewBag.SelectedTab)
+    {
+        @: active
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title | Career Pathfinder</title>
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+        @RenderSection("AdditionalMeta", false)
+        @Styles.Render("~/bundles/styles")
+
+        @*<script>
+        // loadCSS - I commented this out because it looks crap when it first loads no css.
+        function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+        loadCSS("@Styles.Url("~/bundles/styles")");
+        </script>
+        <noscript>
+            @Styles.Render("~/bundles/styles")
+        </noscript>*@                
+    </head>
+
+    <body>
+
+         @*Header Section*@ 
+        <div class="mainmenu-wrapper">
+            <div class="container">
+
+                <div class="menuextras">
+                    <div class="extras">
+                        <ul>
+                            @if (User.Identity.IsAuthenticated) //TODO: Check for user authentication
+                            {
+                                <li><strong>Welcome back, @CookieData.GetUserName(User.Identity.Name)</strong></li>
+                                <li> | </li>
+                                <li><a href="@Url.Action("Logout", "Account", new { area = "" })">Logout</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="@Url.Action("Sign_Up", "Account")">Sign Up</a></li>
+                                <li> | </li>
+                                <li><a href="@Url.Action("Login", "Account")">Login</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+                <nav id="mainmenu" class="mainmenu">
+                    <ul>
+                        <li class="logo-wrapper"><a href="@Url.RouteUrl("Home")"><img src="@Url.Content("~/Assets/Images/careerpathfinder-logo.png")" alt="My Career"></a></li>
+                        <li class="@SelectedTabClass("home")">
+                            <a href="@Url.RouteUrl("Home")">Home</a>
+                        </li>
+
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li class="@SelectedTabClass("adminPanel")">
+                                <a href="@Url.Action("Index", "Account", new { area = "admin" })">Admin Home</a>
+                            </li>
+                        }
+                        else if (User.IsInRole("member"))
+                        {
+                            <li class="has-submenu @SelectedTabClass("dashboard")">
+                                <a href="#">My Future</a>
+                                <div class="mainmenu-submenu">
+                                    <div class="mainmenu-submenu-inner">
+                                        <div>
+                                            <ul>
+                                                <li><a href="@Url.Action("Index", "Test", new {area="member"})"><i class="glyphicon glyphicon-list-alt"></i> Take Test</a></li>
+                                                <li><a href="@Url.Action("Dashboard", "Account", new { area = "member" })"><i class="glyphicon glyphicon-tasks"></i> Dashboard</a></li>
+                                                <li><a href="@Url.Action("Resources", "Account", new { area = "member" })"><i class="glyphicon glyphicon-download-alt"></i> Resources</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="@SelectedTabClass("dashboard")">
+                                <a href="@Url.Action("Dashboard", "Account", new { area = "member" })">My Future</a>
+                            </li>
+
+                            <li class="@SelectedTabClass("pricing")">
+                                <a href="@Url.RouteUrl("Pricing")">Pricing</a>
+                            </li>
+                        }
+
+                        <li class="@SelectedTabClass("about")">
+                            <a href="@Url.RouteUrl("About")">About Us</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+         @*End Header Section*@
+
+        @* No Javascript Check *@
+        <noscript>
+            <div class="alert alert-warning" role="alert">
+                This site is best viewed with javascript enabled. Certain features may not work correctly without javascript.
+            </div>
+        </noscript>
+        @* End No Javascript Check *@
+
+        @* No Cookies Check *@
+        @if (ViewBag.CookieDisabled == true)
+        {
+            <div class="alert alert-warning" role="alert">
+                We noticed that cookies are not enabled in your browser. In order to login or sign up, you will need to enable cookies. <a href="http://www.whatarecookies.com/enable.asp">Learn more</a>
+            </div>
+        }
+        @* End No Cookies Check *@
+
+        @* Temporary Notice *@
+        @*<div class="section-notice">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 align="center">Please note that this site is currently being run in Beta Version</h1>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        @* End Temporary Notice *@
+
+         @*Body Section*@ 
+        @RenderBody()
+         @*End Body Section*@ 
+
+         @*Footer Section*@ 
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>My Future</h3>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <a href="@Url.Action("Dashboard", "Account", new {area="member"})"><img src="@Url.Content("~/Assets/Images/believe01.jpg")" alt="My Future"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>Navigate</h3>
+                        <ul class="no-list-style footer-navigate-section">
+                            <li><a href="@Url.RouteUrl("Home")">Home</a></li>
+                            <li><a href="@Url.Action("Dashboard", "Account", new {area="member"})">My Future</a></li>
+                            <li><a href="@Url.Action("Index", "Test", new {area="member"})">Take the Test</a></li>
+                            <li><a href="@Url.Action("Faqs", "Help", new {area=""})">FAQs</a></li>
+                            <li><a href="@Url.Action("Privacy_Policy", "Help", new {area=""})">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-footer col-md-4 col-xs-6">
+                        <h3>Contact Us</h3>
+                        <p class="contact-us-details">
+                            <b>Address:</b> Durban, South Africa<br />
+                            <b>Phone:</b> 011 111 1111<br />
+                            <b>Email:</b> <a href="mailto:careerpathfindertest@gmail.com">careerpathfindertest@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-copyright">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="@Url.Content("~/Assets/Images/payfast-options.png")" class="img-responsive">
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    &copy; @DateTime.Now.Year CareerPathfinder <br />
+                                    <span class="footer-designed-by">Site designed and developed by <a href="https://www.linkedin.com/in/mohammedirfaankamroodeen/">IrFaaN_KaMo</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+            </div>
+        </div>
+         @*End Footer Section*@ 
+
+        @Scripts.Render("~/bundles/scripts")
+        @RenderSection("Scripts", false)
+
+    </body>
+
+</html>

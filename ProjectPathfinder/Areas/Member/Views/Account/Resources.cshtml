@@ -1,0 +1,149 @@
+﻿@using ProjectPathfinder.Infrastructure.Extensions
+@using ProjectPathfinder.Infrastructure.Utilities
+@{
+    ViewBag.Title = "Resources";
+}
+
+@helper BullseyeDescription(string subjectName)
+{
+    @("A collection of " + subjectName + " related careers")
+}
+
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Resources for Career Pathfinders</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        
+
+        @*<div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    Your browser will need a PDF viwer in order to view these resources.
+                </div>
+            </div>
+        </div>*@
+
+        @* Begin Accordian *@
+        <div class="panel-group" id="accordion">
+            
+            <div class="faqHeader">Resources</div>
+
+            @* Panel One *@
+            @if (ViewBag.AllowPaidMemberResource)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Career Pathfinder Processes</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-6 resource-list">
+                                    @Html.ResourceItem(@Url.Action("Resource_Viewer", "Account", new { fileName = "Results_Reading_Guide.pdf", area = "member" }),
+                                   @Url.Content("~/Assets/Images/general/pdfIcon.png"),
+                                   "Career Pathfinder Test Process",
+                                   "This guide will help you to understand the process and reasoning of the career pathfinder test")
+
+                                    @Html.ResourceItem(@Url.Action("Resource_Viewer", "Account", new { fileName = "Job_Shadow.pdf", area = "member" }),
+                                   @Url.Content("~/Assets/Images/general/pdfIcon.png"),
+                                   "Job Shadow",
+                                   "Once you have selected a career, it is imperative for you to explore the career. This guide will prepare you for a Job Shadow Assignment")
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 resource-list">
+                                    @Html.ResourceItem(@Url.Action("Resource_Viewer", "Account", new { fileName = "Results_Reading_Guide.pdf", area = "member" }),
+                                   @Url.Content("~/Assets/Images/general/pdfIcon.png"),
+                                   "Interpreting the Results",
+                                   "This guide will explain the basics of how to interprete your results")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @* End Panel One *@
+
+            @{
+                string[] posters = GeneralUtils.BullseyePosters();
+                double halfListSizeRoundedUp = Math.Ceiling((double)(posters.Length / 2.0));
+                int listOneLength = Convert.ToInt32(halfListSizeRoundedUp);
+            }
+
+            @* Panel Two *@
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Bullseye Posters</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 resource-list">
+
+                                @{
+                                    for (int i = 0; i < listOneLength; i++)
+                                    {
+                                        @Html.ResourceItem(@Url.Action("Resource_Viewer", "Account", new { fileName = "BullsEyePosters\\" + posters[i].Replace(" ", "_") + ".pdf", area = "member" }),
+                                        @Url.Content("~/Assets/Images/general/pdfIcon.png"),
+                                        posters[i],
+                                        BullseyeDescription(posters[i]).ToString());
+                                    }
+                                }
+                            </div>
+                            <div class="col-xs-12 col-sm-6 resource-list">
+                                @{
+                                    for (int i = listOneLength; i < posters.Length; i++)
+                                    {
+                                        @Html.ResourceItem(@Url.Action("Resource_Viewer", "Account", new { fileName = "BullsEyePosters\\" + posters[i].Replace(" ", "_") + ".pdf", area = "member" }),
+                                        @Url.Content("~/Assets/Images/general/pdfIcon.png"),
+                                        posters[i],
+                                        BullseyeDescription(posters[i]).ToString());
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* End Panel Two *@
+        </div>
+        @* End Accordian *@
+
+        @if (ViewBag.AllowPaidMemberResource == false)
+        {
+            <!-- Call to Action Bar -->
+            <div class="section section-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="calltoaction-wrapper">
+                                <h3 class="text-danger">Complete CareerPathfinder Package Required!</h3> <br>
+                                <h4>
+                                    The complete CareerPathfinder package is required to unlock the compelete set 
+                                    of resources to get started with discovering your future career.
+                                </h4><br>
+                                <a href="@Url.Action("PurchaseTest", "Payment", new {area="member"})" class="btn btn-red">Purchase Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Call to Action Bar -->
+        }
+
+    </div>
+</div>

@@ -1,0 +1,100 @@
+﻿@model ProjectPathfinder.Areas.Member.ViewModels.AccountInvoice
+@{
+    Layout = null;
+}
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Invoice | Career Pathfinder</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    @Styles.Render("~/bundles/styles")
+</head>
+
+<body>
+
+    @*<ol class="breadcrumb">
+        <li><a href="@Url.RouteUrl("Home")">Home</a></li>
+        <li><a href="@Url.Action("Dashboard", "Account")">My Dashboard</a></li>
+        <li class="active">Invoice for Test Purchase</li>
+    </ol>*@
+
+    <div class="section">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-center">
+                        <img src="@Url.Content("~/Assets/Images/careerpathfinder-logo.png")">
+                    </div>
+                    <hr>
+                    @{ string name = Model.FirstName + " " + Model.LastName; }
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-6 pull-left">
+                            <div class="panel panel-default height">
+                                <div class="panel-heading">@name</div>
+                                <div class="panel-body">
+                                    <strong>Contact Number: </strong>@Model.ContactNo<br>
+                                    <strong>Email: </strong>@Model.Email<br>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-6">
+                            <div class="panel panel-default height">
+                                <div class="panel-heading">Order Details</div>
+                                <div class="panel-body">
+                                    <strong>Order Number: </strong>@Model.OrderNo<br>
+                                    <strong>Invoice Date: </strong>@Model.InvoiceDate<br />
+                                    <strong>Print Date: </strong>@DateTime.Now.ToString("dd-MM-yyyy")<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="text-center"><strong>Payment Summary</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <td><strong>Item Name</strong></td>
+                                            <td class="text-center"><strong>Item Price</strong></td>
+                                            <td class="text-center"><strong>Discount</strong></td>
+                                            <td class="text-right"><strong>Total</strong></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>@Model.ItemName</td>
+                                            <td class="text-center">@Model.ItemPrice</td>
+                                            <td class="text-center">@Model.ItemDiscount%</td>
+                                            <td class="text-right">@Model.ItemTotal</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="highrow"></td>
+                                            <td class="highrow"></td>
+                                            <td class="highrow text-center"><strong>Total</strong></td>
+                                            <td class="highrow text-right">@Model.FinalTotal</td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/scripts")
+
+</body>
+</html>

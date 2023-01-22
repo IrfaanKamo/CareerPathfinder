@@ -1,0 +1,204 @@
+﻿@model ProjectPathfinder.Areas.Admin.ViewModels.ResultFeedback
+
+<div class="section">
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+                @* Start panel *@
+
+                @using (Html.BeginForm())
+                {
+                    <h2>Upload Test Results</h2>
+                    <h3>@ViewBag.StudentDetails</h3>
+
+                    <div>@Html.ValidationSummary()</div>
+                    <div>@Html.Hidden("memberId", Model.memberId)</div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Description of Candidate's Personality</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Html.TextBoxFor(x => x.personality_01, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                    <td>@Html.TextBoxFor(x => x.personality_02, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                    <td>@Html.TextBoxFor(x => x.personality_03, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.TextBoxFor(x => x.personality_04, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                    <td>@Html.TextBoxFor(x => x.personality_05, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                    <td>@Html.TextBoxFor(x => x.personality_06, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Interest Fields</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="30%">Interest 1</td>
+                                    <td>@Html.TextBoxFor(x => x.interest_01, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                                <tr>
+                                    <td>Interest 2</td>
+                                    <td>@Html.TextBoxFor(x => x.interest_02, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Abilities and Skills Fields</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="30%">Abilities and Skills 1</td>
+                                    <td>@Html.TextBoxFor(x => x.abilities_01, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                                <tr>
+                                    <td>Abilities and Skills 2</td>
+                                    <td>@Html.TextBoxFor(x => x.abilities_02, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Career Values</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="30%">Career Value 1</td>
+                                    <td>@Html.TextBoxFor(x => x.careerValues_01, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                                <tr>
+                                    <td>Career Value 2</td>
+                                    <td>@Html.TextBoxFor(x => x.careerValues_02, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Preferred Subjects</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="30%">Preferred Subject 1</td>
+                                    <td>@Html.TextBoxFor(x => x.preferredSubject_01, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                                <tr>
+                                    <td>Preferred Subject 2</td>
+                                    <td>@Html.TextBoxFor(x => x.preferredSubject_02, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Career Groups</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="30%">Career Group 1</td>
+                                    <td>@Html.TextBoxFor(x => x.careerGroup_01, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                                <tr>
+                                    <td>Career Group 2</td>
+                                    <td>@Html.TextBoxFor(x => x.careerGroup_02, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Suggested Career Choice</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="30%">Suggested Career 1</td>
+                                    <td>@Html.TextBoxFor(x => x.suggestedCareer_01, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                                <tr>
+                                    <td>Suggested Career 2</td>
+                                    <td>@Html.TextBoxFor(x => x.suggestedCareer_02, new { @maxlength = "160", @class = "form-control test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Do Interests and Abilities match? Percentage of compatiblity</th>
+                                    <th>Percent (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Interests and Abilities match Career Choice ONE by pecentage</td>
+                                    <td class="text-center">@Html.TextBoxFor(x => x.interestAbilitiesMatch_01, new { @maxlength = "3", @class = "form-control test-element" })</td>                                   
+                                </tr>
+                                <tr>
+                                    <td>Interests and Abilities match Career Choice TWO by pecentage</td>
+                                    <td class="text-center">@Html.TextBoxFor(x => x.interestAbilitiesMatch_02, new { @maxlength = "3", @class = "form-control test-element" })</td>                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Comments</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Html.TextAreaFor(x => x.comments, 5, 55, new { @class = "test-element" })</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-md-offset-3"><input type="submit" value="Upload Results" class="btn btn-primary btn-block btn-lg"></div>
+                    </div>
+                }
+
+                @* End Panel *@
+            </div>
+        </div>
+    </div>
+</div>
